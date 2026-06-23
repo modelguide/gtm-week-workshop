@@ -18,6 +18,12 @@ Run UC1 once yourself, file-only, before the day. The answers you should not be 
 - **Join keys:** company on `company_domain`, person on `person_linkedin_url`. Everything
   resolves file-only; writeback needs Attio connected.
 - **Why-now lives in** `signals_feed.csv`; the filter lives in `brain/icp_sponsor.md`.
+- **People layer is thin — that's the lesson.** ~109 people are real with LinkedIn (the
+  speakers); the ~291 sponsor contacts are placeholders (no LinkedIn) — don't pitch them. The
+  contact move is **enrich the COMPANY → find the current Head of Demand Gen / CMO.** This is the
+  one beat where connected vs file-only really diverge: with Clay/Apollo/Folk you pull the real
+  person live; file-only, you flag `to-verify`. Enriched results save to `work/` (never `data/`)
+  so the data viewer reloads with them — enrich → save back → reload.
 
 ## How to run it — beat by beat
 
@@ -59,15 +65,19 @@ me the top 10 UK/London speaker targets: name, title, company, the topic they'd 
 EXPECT: Cognism leaders, Userpilot, Brand24, etc. NARRATE: same filter-then-rank move, people
 instead of companies, joined on LinkedIn URL.
 
-### 4 · Save the board (≈8 min)
+### 4 · Save the board + close the loop (≈8 min)
 DEFAULT (everyone, file-only):
 ```
-Save the sponsor and speaker shortlists as target-board.csv with columns:
-type, name, fit_score, tier_or_topic, why_now, status=To approach. Then show me the file.
+Save the sponsor + speaker shortlists to work/target-board.csv with columns: type, name,
+fit_score, tier_or_topic, why_now, contact (role to reach, marked to-verify if not enriched),
+status=To approach. Never touch data/. Then show me the file.
 ```
-DEMO (your machine, if Attio connected): "watch it write straight back to the CRM as a new
-list" — run the same but "…create a list 'London 2027 — to approach' in Attio and add these."
-SAY: "file or CRM — same motion. Connect-or-load, exactly like this morning."
+ENRICH (if Clay/Apollo/Folk connected): add "…and for the top 10 sponsors, enrich the company to
+fill the real contact + LinkedIn before saving" → the enriched rows get **written back** into
+`work/target-board.csv`.
+LAND: "you didn't just read the data — you enriched it and wrote it back. That's the loop."
+DEMO (your machine, if Attio connected): "…and create a list 'London 2027 — to approach' in Attio
+and add these." SAY: "file, work/, or CRM — same motion."
 
 ### 5 · They touch it + close (≈8 min)
 THEY DO: each person re-runs with one tweak of their own — change the ICP weighting, widen to

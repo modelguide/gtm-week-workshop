@@ -36,20 +36,24 @@ Granola pull and the do-not-approach flag out loud: "it read my call notes and c
 landmine."
 
 ## 2 · Turn it into a skill (≈4 min) — the moment
-SAY: "I don't want to retype that every morning. Watch — I just *ask* for a skill."
-PASTE:
+SAY: "I don't want to retype that every morning. Watch — I'll ask for a skill, and keep it vague
+on purpose so it interviews me."
+PASTE (deliberately under-specified, so skill-creator asks):
 ```
-That was exactly right and I'll want it every morning. Turn it into a skill called
-"meeting-prep". Write the SKILL.md: the steps you just took, which files (and live
-connectors, if present) to read, and the one-page output format you just used. Then show
-me the skill and offer a test run.
+Turn what we just did into a skill called "meeting-prep". Make it reusable.
 ```
-EXPECT: skill-creator drafts `SKILL.md` and asks 2–3 clarifying questions. Answer them live,
-out loud, so they see authoring is a conversation:
-- *Which calendar?* → "Google Calendar if connected, else the .ics file." (this is the
-  connect-or-load lesson — say it)
-- *Output length?* → "one page, max."
-- *Handle missing data?* → "leave blanks blank, never invent; flag partial transcripts."
+EXPECT: it interviews you — 2–3 clarifying questions. Answer live, out loud, so they see authoring
+is a conversation:
+- *Which calendar / sources?* → "Google Calendar if connected, else the .ics; plus CRM, Granola,
+  signals." (this is the connect-or-load lesson — say it)
+- *Output length / format?* → "one page per call, the format we just used."
+- *Missing data?* → "leave blanks blank, never invent; flag partial transcripts."
+
+> ⚠ Why vague on purpose: if you hand it a **fully-specified** prompt (every step, file and
+> format — like P3 in `prompts-one-pager.md`), it just builds the skill with **no questions**.
+> That's correct, not a bug — there's nothing left to ask, and your `CLAUDE.md` already answers
+> the rest. To get the live *interview* moment, under-specify and let it pull the detail out of
+> you. (Use the P3 version when you want it to just build, no Q&A.)
 
 ## 3 · Test it (≈2 min)
 SAY: "Now run the skill itself — not my prompt."

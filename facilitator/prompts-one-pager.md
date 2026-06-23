@@ -4,6 +4,26 @@ The exact prompts to paste, in order, with what each produces. Copied from the m
 
 ---
 
+## Connectors — when to go live (and when files are fine)
+**Rule of thumb:** connectors only *change the answer* at **enrichment + research (UC1, UC2)** —
+that's the one place files can't conjure new real data. Everywhere else they're convenience; the
+whole day runs file-only.
+
+| Step | Live connector (optional) | Files OK? | Why you'd connect |
+|---|---|---|---|
+| P0 explainer · P1 instructions | — | ✅ | nothing to connect |
+| P2 load spine | Attio / HubSpot (CRM) | ✅ default | only helps if your CRM holds *this event's* data — the kit's doesn't, so use files (that's why your live Attio didn't match) |
+| P3 meeting-prep | Calendar · Granola/Fireflies · Gmail · Attio | ✅ | live calendar + live call notes = real prep; else the kit's transcripts |
+| **UC1 prospecting** | **★ Clay / Apollo / Folk** (enrichment) | ✅ (to-verify) | **the prime moment** — enrich the company to find the *real* contact + LinkedIn; file-only marks them `to-verify` |
+| **UC2 account intel** | **★ Exa / Clay** (+ SimilarWeb) | ✅ | live web research + fresh signals; else `lookalike_features` + `signals_feed` + the anchor deep-dive |
+| UC3 offers/content | — (Canva optional) | ✅ | voice + templates ship in the kit |
+| Dashboard (PM) | Luma · Supermetrics | ✅ | live tickets/spend; else the kit's CSVs |
+
+★ = the only two steps where connecting genuinely upgrades the result. If a participant has
+nothing connected, they still complete every step.
+
+---
+
 ## P0 · Get the kit + repo-explainer artifact
 *Produces: a single-file HTML map of the whole kit — instant visual win in the first 8 minutes.*
 ```
@@ -51,14 +71,18 @@ read, and the exact output format above. Then show me the skill and do one test 
 ---
 
 ## UC1 · ICP search & prospecting
-*Produces: a ranked top-20 London sponsor list + top-10 speaker shortlist, written back to CRM.*
+*Produces: a ranked sponsor + speaker shortlist, each with the right contact to reach (enriched, or flagged to-verify), written back to `work/target-board.csv`.*
 ```
 We're filling the sponsor roster and speaker lineup for the London edition. From the
-Warsaw seed (Relationship = Past Sponsor / Past Speaker in the CRM), and the prospects
-in clay_table_sponsor-prospects.csv and apollo_people-export_speakers.csv: rank the top
-20 London/UK sponsor targets and the top 10 speaker targets against icp_sponsor.md and
-icp_speaker.md. Exclude anyone in do-not-approach.csv. Give me the "why now" for each
-from signals_feed.csv, and write the shortlist back as a new view/list in the CRM.
+Warsaw seed (Relationship = Past Sponsor / Past Speaker) and the prospects in
+clay_table_sponsor-prospects.csv and apollo_people-export_speakers.csv: rank the top 20
+London/UK sponsor targets and the top 10 speaker targets against icp_sponsor.md and
+icp_speaker.md. Exclude anyone in do-not-approach.csv and give the "why now" per target
+from signals_feed.csv. For the top sponsor targets, find the right person to reach —
+current Head of Demand Gen / Field Marketing / CMO + LinkedIn — by enriching the COMPANY
+(use a connected enrichment tool if present; otherwise mark the contact to-verify; do not
+trust the thin attio_people rows). Write the enriched board back to work/target-board.csv
+(never edit data/) — and to a CRM list too if Attio is connected.
 ```
 
 ## UC2 · Account intel & lookalikes

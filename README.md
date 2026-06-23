@@ -11,8 +11,8 @@ the stale tracker are synthetic** — nothing confidential is exposed.
 
 ## Get the kit
 ```bash
-git clone <this-repo-url> gtm-tech-week-london
-cd gtm-tech-week-london
+git clone https://github.com/modelguide/gtm-week-workshop
+cd gtm-week-workshop
 ```
 Or download the ZIP from the repo's green **Code** button → **Download ZIP**. No build step needed to
 use it — the data is already generated under `data/`, `brain/` and `content-library/`.

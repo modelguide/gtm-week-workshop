@@ -1,3 +1,7 @@
 .DS_Store
 node_modules/
 npm-debug.log*
+
+# work/ holds outputs — keep them local, ship only the convention README
+work/*
+!work/README.md
