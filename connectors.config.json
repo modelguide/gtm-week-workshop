@@ -1,0 +1,82 @@
+{
+  "kit": "gtm-tech-week-london",
+  "as_of": "2026-06-22",
+  "event": { "name": "GTM Tech Week London", "tentative_date": "2027-04-21", "currency": "GBP", "note": "date is a working assumption the cross-cut demo pressure-tests against competitor-events.csv" },
+  "default_mode": "connect-or-load",
+  "switch": "For each connector: if its live MCP server is connected in this session, USE LIVE and treat the file as the schema reference. If not connected, LOAD the file(s). Skills should resolve this per-connector, not all-or-nothing.",
+  "join_keys": {
+    "company": "company_domain  (Attio Domains = Clay Domain = Apollo Website = lookalike/signals company_domain)",
+    "person": "person_linkedin_url  (Attio People LinkedIn = Apollo 'Person Linkedin Url' = signals person_linkedin_url)"
+  },
+  "spine": "data/attio_companies.csv + data/attio_people.csv + data/attio_deals.csv (the CRM). Everything else joins back to it.",
+  "connectors": [
+    {
+      "id": "attio", "role": "CRM spine (accounts + contacts + sponsorship/speaker pipeline)",
+      "live": { "type": "mcp", "server": "Attio" },
+      "files": ["data/attio_companies.csv", "data/attio_people.csv", "data/attio_deals.csv"],
+      "join_on": ["company_domain", "person_linkedin_url"]
+    },
+    {
+      "id": "hubspot", "role": "CRM spine (alternative)",
+      "live": { "type": "mcp", "server": "HubSpot" },
+      "files": ["data/attio_companies.csv", "data/attio_people.csv", "data/attio_deals.csv"],
+      "note": "No HubSpot file ships; map HubSpot exports onto the Attio spine via company_domain / person LinkedIn. Header parity in data/SCHEMA-SOURCES.md."
+    },
+    {
+      "id": "clay", "role": "UC1/UC2 — sponsor prospecting + enrichment",
+      "live": { "type": "mcp", "server": "Clay" },
+      "files": ["data/clay_table_sponsor-prospects.csv"],
+      "join_on": ["company_domain"]
+    },
+    {
+      "id": "apollo", "role": "UC1 — speaker prospecting",
+      "live": { "type": "mcp", "server": "Apollo", "fallback": "Exa web_search" },
+      "files": ["data/apollo_people-export_speakers.csv"],
+      "join_on": ["person_linkedin_url"]
+    },
+    {
+      "id": "exa", "role": "UC2 — account intel / web research / lookalikes",
+      "live": { "type": "mcp", "server": "Exa" },
+      "files": ["data/lookalike_features.csv", "data/signals_feed.csv", "brain/account-deep-dive_ANCHOR.md"],
+      "join_on": ["company_domain", "person_linkedin_url"]
+    },
+    {
+      "id": "granola", "role": "Meeting prep — prior call transcripts",
+      "live": { "type": "mcp", "server": "Granola" },
+      "files": ["brain/granola_clay-sponsor-intro-transcript.md", "brain/granola_keynote-target-call-transcript.md", "brain/granola_warsaw-debrief-transcript.md"]
+    },
+    {
+      "id": "gmail", "role": "Meeting prep — email context",
+      "live": { "type": "mcp", "server": "Gmail" },
+      "files": ["brain/email-threads/clay-sponsorship-thread.md", "brain/email-threads/keynote-sam-jacobs-thread.md"]
+    },
+    {
+      "id": "google_calendar", "role": "Meeting prep — next 24h",
+      "live": { "type": "mcp", "server": "Google Calendar" },
+      "files": ["brain/calendar_next-24h.ics"]
+    },
+    {
+      "id": "luma", "role": "Dashboard — ticket sales",
+      "live": { "type": "export", "note": "Luma has no MCP; export the guest CSV and replace the file." },
+      "files": ["data/luma_ticket-sales.csv"],
+      "join_on": ["company_name (NOTE: spellings differ from CRM — the join-key fix is part of the demo)"]
+    },
+    {
+      "id": "ad_spend", "role": "Dashboard — marketing spend (Supermetrics-style)",
+      "live": { "type": "export", "note": "Supermetrics/ad-platform export; replace the file." },
+      "files": ["data/marketing-spend_export.csv"],
+      "join_on": ["campaign_name (NOTE: sponsor spellings differ from CRM)"]
+    },
+    {
+      "id": "tracker", "role": "Dashboard — hand-built sponsor tracker (STALE & WRONG on purpose)",
+      "live": { "type": "none" },
+      "files": ["data/sponsorship-tracker_WIP.xlsx"],
+      "note": "Reconcile against attio_deals.csv — see BUILD-REPORT.md for the 4 planted discrepancies."
+    },
+    {
+      "id": "content", "role": "UC3 — offers + content + brand",
+      "live": { "type": "mcp", "server": "Notion", "optional": true },
+      "files": ["content-library/", "content-library/brand/voice.md", "content-library/brand/kit.md", "data/competitor-events.csv", "data/do-not-approach.csv"]
+    }
+  ]
+}

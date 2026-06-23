@@ -1,0 +1,105 @@
+signal_id,signal_date,company_domain,person_linkedin_url,entity_name,signal_type,signal_summary,source,strength
+sig_0001,2026-04-30,clay.com,,Clay,opened_london_office,Clay opened its first international office in London (Mar 2026); Europe already ~20% of revenue.,clay.com/blog/clay-europe-announcement,5
+sig_0002,2026-05-11,clay.com,,Clay,raised_round,Clay raised $100M Series C at $3.1B led by CapitalG (Aug 2025).,techcrunch.com,5
+sig_0003,2026-03-20,cognism.com,,Cognism,product_launch,Cognism shipped new AI search + intent layer; London HQ scaling EMEA.,cognism.com,3
+sig_0004,2026-04-17,synthesia.io,,Synthesia,raised_round,Synthesia raised at a $2.1B valuation; moved into new Regent's Place London HQ.,synthesia.io,4
+sig_0005,2026-05-07,paddle.com,,Paddle,product_launch,Paddle expanded its merchant-of-record + AI billing suite.,paddle.com,3
+sig_0006,2026-05-11,11x.ai,,11x,raised_round,11x raised Series B; retains London founding office.,11x.ai,4
+sig_0007,2026-04-18,elevenlabs.io,,ElevenLabs,hiring_gtm_engineer,ElevenLabs hiring across London revenue + GTM engineering.,elevenlabs.io,4
+sig_0008,2026-03-20,6sense.com,,6sense,opened_london_office,6sense opened London EMEA HQ at Tower 42.,6sense.com,4
+sig_0009,2026-04-17,pigment.com,,Pigment,opened_london_office,Pigment scaling its London office (1 Primrose St).,pigment.com,3
+sig_0010,2026-04-16,velaris.io,,Velaris,raised_round,Velaris (London) raised €4.7M to challenge Planhat in CS.,velaris.io,3
+sig_0011,2026-04-20,surferseo.com,,Surfer,hired_head_of_demand_gen,Surfer hired a new Head of Demand Generation (LinkedIn signal).,Exa,4
+sig_0012,2026-05-22,viktor.com,,Viktor,launched_podcast,Viktor launched a GTM podcast / content series.,company blog,2
+sig_0013,2026-04-22,getzynt.com,,ZYNT,posting_ai_gtm,ZYNT leadership posting actively on AI + GTM.,company blog,2
+sig_0014,2026-05-17,grafit.agency,,Grafit,attended_competitor_event,Grafit exhibited at a competitor GTM event.,LinkedIn,2
+sig_0015,2026-06-05,cognee.ai,,Cognee,launched_podcast,Cognee launched a GTM podcast / content series.,company blog,1
+sig_0016,2026-05-20,pfr.pl,,PFR,product_launch,PFR announced a product launch.,Crunchbase,3
+sig_0017,2026-05-02,salesforge.ai,,Salesforge,attended_competitor_event,Salesforge exhibited at a competitor GTM event.,Crunchbase,2
+sig_0018,2026-04-13,userpilot.com,,Userpilot,launched_podcast,Userpilot launched a GTM podcast / content series.,Crunchbase,3
+sig_0019,2026-06-01,traffit.com,,TRAFFIT,hiring_gtm_engineer,TRAFFIT has an open GTM Engineer / RevOps req.,company blog,1
+sig_0020,2026-05-06,neptune.ai,,neptune.ai,hired_head_of_demand_gen,neptune.ai hired a new Head of Demand Generation (LinkedIn signal).,Crunchbase,3
+sig_0021,2026-04-29,cognism.com,,Cognism,hired_head_of_demand_gen,Cognism hired a new Head of Demand Generation (LinkedIn signal).,LinkedIn,2
+sig_0022,2026-05-11,attio.com,,Attio,hired_head_of_demand_gen,Attio hired a new Head of Demand Generation (LinkedIn signal).,Crunchbase,2
+sig_0023,2026-04-22,kaspr.io,,Kaspr,product_launch,Kaspr announced a product launch.,company blog,3
+sig_0024,2026-04-30,durhamlane.com,,durhamlane,product_launch,durhamlane announced a product launch.,Crunchbase,1
+sig_0025,2026-06-03,salesfoundations.co.uk,,Sales Foundations,product_launch,Sales Foundations announced a product launch.,Crunchbase,2
+sig_0026,2026-04-04,orrjo.com,,ORRJO,attended_competitor_event,ORRJO exhibited at a competitor GTM event.,Crunchbase,4
+sig_0027,2026-05-15,paddle.com,,Paddle,hired_head_of_demand_gen,Paddle hired a new Head of Demand Generation (LinkedIn signal).,Exa,3
+sig_0028,2026-04-30,velaris.io,,Velaris,attended_competitor_event,Velaris exhibited at a competitor GTM event.,Crunchbase,3
+sig_0029,2026-06-07,poly.ai,,PolyAI,posting_ai_gtm,PolyAI leadership posting actively on AI + GTM.,Exa,3
+sig_0030,2026-05-11,tessl.io,,Tessl,hired_head_of_demand_gen,Tessl hired a new Head of Demand Generation (LinkedIn signal).,LinkedIn,4
+sig_0031,2026-04-13,huble.com,,Huble,product_launch,Huble announced a product launch.,LinkedIn,3
+sig_0032,2026-05-04,transmissionagency.com,,Transmission,attended_competitor_event,Transmission exhibited at a competitor GTM event.,company blog,2
+sig_0033,2026-05-19,gravityglobal.com,,Gravity Global,posting_ai_gtm,Gravity Global leadership posting actively on AI + GTM.,Crunchbase,4
+sig_0034,2026-05-30,theleadgenerationcompany.co.uk,,The Lead Generation Company,product_launch,The Lead Generation Company announced a product launch.,LinkedIn,4
+sig_0035,2026-06-08,cremarc.com,,Cremarc,hiring_gtm_engineer,Cremarc has an open GTM Engineer / RevOps req.,LinkedIn,2
+sig_0036,2026-04-18,sixandflow.com,,Six & Flow,hiring_gtm_engineer,Six & Flow has an open GTM Engineer / RevOps req.,Exa,1
+sig_0037,2026-06-15,gripped.io,,Gripped,hiring_gtm_engineer,Gripped has an open GTM Engineer / RevOps req.,Crunchbase,4
+sig_0038,2026-06-06,clay.com,,Clay,hired_head_of_demand_gen,Clay hired a new Head of Demand Generation (LinkedIn signal).,company blog,1
+sig_0039,2026-04-02,outreach.io,,Outreach,posting_ai_gtm,Outreach leadership posting actively on AI + GTM.,Crunchbase,2
+sig_0040,2026-05-17,clari.com,,Clari,product_launch,Clari announced a product launch.,company blog,3
+sig_0041,2026-06-14,hubspot.com,,HubSpot,hired_head_of_demand_gen,HubSpot hired a new Head of Demand Generation (LinkedIn signal).,Crunchbase,3
+sig_0042,2026-04-11,zoominfo.com,,ZoomInfo,hiring_gtm_engineer,ZoomInfo has an open GTM Engineer / RevOps req.,LinkedIn,1
+sig_0043,2026-05-07,lavender.ai,,Lavender,hired_head_of_demand_gen,Lavender hired a new Head of Demand Generation (LinkedIn signal).,company blog,2
+sig_0044,2026-05-20,albacross.com,,Albacross,attended_competitor_event,Albacross exhibited at a competitor GTM event.,company blog,1
+sig_0045,2026-04-08,pipedrive.com,,Pipedrive,attended_competitor_event,Pipedrive exhibited at a competitor GTM event.,company blog,2
+sig_0046,2026-04-25,highspot.com,,Highspot,hiring_gtm_engineer,Highspot has an open GTM Engineer / RevOps req.,Exa,4
+sig_0047,2026-05-03,showpad.com,,Showpad,attended_competitor_event,Showpad exhibited at a competitor GTM event.,Crunchbase,1
+sig_0048,2026-05-12,dock.us,,Dock,product_launch,Dock announced a product launch.,Exa,4
+sig_0049,2026-06-15,bigtincan.com,,Bigtincan,raised_round,Bigtincan reportedly raising / recently raised a new round (signal — verify live).,LinkedIn,3
+sig_0050,2026-05-18,avoma.com,,Avoma,hiring_gtm_engineer,Avoma has an open GTM Engineer / RevOps req.,company blog,1
+sig_0051,2026-04-10,fathom.video,,Fathom,hiring_gtm_engineer,Fathom has an open GTM Engineer / RevOps req.,company blog,2
+sig_0052,2026-06-05,tldv.io,,tl;dv,product_launch,tl;dv announced a product launch.,Crunchbase,4
+sig_0053,2026-05-23,salesken.ai,,Salesken,hiring_gtm_engineer,Salesken has an open GTM Engineer / RevOps req.,company blog,2
+sig_0054,2026-05-25,mixmax.com,,Mixmax,hired_head_of_demand_gen,Mixmax hired a new Head of Demand Generation (LinkedIn signal).,Exa,4
+sig_0055,2026-04-13,bombora.com,,Bombora,raised_round,Bombora reportedly raising / recently raised a new round (signal — verify live).,LinkedIn,1
+sig_0056,2026-06-04,ocean.io,,Ocean.io,hired_head_of_demand_gen,Ocean.io hired a new Head of Demand Generation (LinkedIn signal).,company blog,3
+sig_0057,2026-06-03,leadiq.com,,LeadIQ,product_launch,LeadIQ announced a product launch.,Exa,1
+sig_0058,2026-04-16,default.com,,Default,hiring_gtm_engineer,Default has an open GTM Engineer / RevOps req.,Exa,3
+sig_0059,2026-05-06,dealhub.io,,DealHub,hiring_gtm_engineer,DealHub has an open GTM Engineer / RevOps req.,company blog,1
+sig_0060,2026-05-19,younium.com,,Younium,product_launch,Younium announced a product launch.,company blog,3
+sig_0061,2026-05-21,planhat.com,,Planhat,launched_podcast,Planhat launched a GTM podcast / content series.,Crunchbase,3
+sig_0062,2026-04-15,churnzero.com,,ChurnZero,product_launch,ChurnZero announced a product launch.,company blog,3
+sig_0063,2026-05-13,custify.com,,Custify,raised_round,Custify reportedly raising / recently raised a new round (signal — verify live).,Crunchbase,1
+sig_0064,2026-06-14,mixpanel.com,,Mixpanel,hired_head_of_demand_gen,Mixpanel hired a new Head of Demand Generation (LinkedIn signal).,LinkedIn,1
+sig_0065,2026-05-11,chameleon.io,,Chameleon,posting_ai_gtm,Chameleon leadership posting actively on AI + GTM.,Crunchbase,3
+sig_0066,2026-04-22,folk.app,,Folk,raised_round,Folk reportedly raising / recently raised a new round (signal — verify live).,LinkedIn,3
+sig_0067,2026-05-23,11x.ai,,11x,attended_competitor_event,11x exhibited at a competitor GTM event.,company blog,1
+sig_0068,2026-05-13,artisan.co,,Artisan,hired_head_of_demand_gen,Artisan hired a new Head of Demand Generation (LinkedIn signal).,Crunchbase,3
+sig_0069,2026-05-29,unifygtm.com,,Unify,posting_ai_gtm,Unify leadership posting actively on AI + GTM.,Exa,4
+sig_0070,2026-06-05,ortto.com,,Ortto,product_launch,Ortto announced a product launch.,Exa,3
+sig_0071,2026-04-06,notioncapital.com,,Notion Capital,raised_round,Notion Capital reportedly raising / recently raised a new round (signal — verify live).,LinkedIn,2
+sig_0072,2026-04-02,episode1.com,,Episode 1 Ventures,raised_round,Episode 1 Ventures reportedly raising / recently raised a new round (signal — verify live).,Exa,2
+sig_0073,2026-05-15,hoxton.ventures,,Hoxton Ventures,raised_round,Hoxton Ventures reportedly raising / recently raised a new round (signal — verify live).,Exa,2
+sig_0074,2026-06-15,indexventures.com,,Index Ventures,attended_competitor_event,Index Ventures exhibited at a competitor GTM event.,Exa,1
+sig_0075,2026-06-03,octopusventures.com,,Octopus Ventures,raised_round,Octopus Ventures reportedly raising / recently raised a new round (signal — verify live).,company blog,2
+sig_0076,2026-04-24,dawncapital.com,,Dawn Capital,attended_competitor_event,Dawn Capital exhibited at a competitor GTM event.,company blog,4
+sig_0077,2026-04-04,eightroads.com,,Eight Roads,hired_head_of_demand_gen,Eight Roads hired a new Head of Demand Generation (LinkedIn signal).,Exa,3
+sig_0078,2026-06-02,83north.com,,83North,posting_ai_gtm,83North leadership posting actively on AI + GTM.,LinkedIn,3
+sig_0079,2026-05-25,accel.com,,Accel,product_launch,Accel announced a product launch.,Crunchbase,1
+sig_0080,2026-04-24,project-a.vc,,Project A,hiring_gtm_engineer,Project A has an open GTM Engineer / RevOps req.,Exa,4
+sig_0081,2026-04-12,felixcap.com,,Felix Capital,product_launch,Felix Capital announced a product launch.,Exa,4
+sig_0082,2026-05-02,woodpecker.co,https://www.linkedin.com/in/georgegavrila,George Gavrila,launched_podcast,George Gavrila launched / hosts a GTM podcast.,LinkedIn,2
+sig_0083,2026-06-11,salesforge.ai,https://www.linkedin.com/in/franksondors,Frank Sondors,launched_podcast,Frank Sondors launched / hosts a GTM podcast.,LinkedIn,3
+sig_0084,2026-05-27,valueships.com,https://www.linkedin.com/in/krzysztof-szyszkiewicz,Krzysztof Szyszkiewicz,shipped_gtm_result,Krzysztof Szyszkiewicz shared a notable GTM result recently.,LinkedIn,2
+sig_0085,2026-05-23,cognism.com,https://www.linkedin.com/in/alice-de-courcy-5205516a,Alice de Courcy,launched_podcast,Alice de Courcy launched / hosts a GTM podcast.,LinkedIn,4
+sig_0086,2026-05-01,scalewise.co,https://www.linkedin.com/in/tomglason,Tom Glason,posting_ai_gtm,Tom Glason posting actively on AI + GTM — strong speaker signal.,LinkedIn,3
+sig_0087,2026-05-18,dlaignite.com,https://www.linkedin.com/in/timothyhughessocialselling,Tim Hughes,shipped_gtm_result,Tim Hughes shared a notable GTM result recently.,LinkedIn,3
+sig_0088,2026-05-01,gocardless.com,https://www.linkedin.com/in/patphelan1,Pat Phelan,posting_ai_gtm,Pat Phelan posting actively on AI + GTM — strong speaker signal.,LinkedIn,4
+sig_0089,2026-05-20,multiverse.io,https://www.linkedin.com/in/donnd,Donn D'Arcy,posting_ai_gtm,Donn D'Arcy posting actively on AI + GTM — strong speaker signal.,LinkedIn,5
+sig_0090,2026-05-09,omnea.co,https://www.linkedin.com/in/abhirukt,Abhirukt Sapru,posting_ai_gtm,Abhirukt Sapru posting actively on AI + GTM — strong speaker signal.,LinkedIn,4
+sig_0091,2026-05-22,gong.io,https://www.linkedin.com/in/lesleyronaldson,Lesley Ronaldson,launched_podcast,Lesley Ronaldson launched / hosts a GTM podcast.,LinkedIn,4
+sig_0092,2026-05-17,revelesco.com,https://www.linkedin.com/in/peterdcrosby,Pete Crosby,launched_podcast,Pete Crosby launched / hosts a GTM podcast.,LinkedIn,3
+sig_0093,2026-06-09,revenueformula.substack.com,https://www.linkedin.com/in/tonihohlbein,Toni Hohlbein,posting_ai_gtm,Toni Hohlbein posting actively on AI + GTM — strong speaker signal.,LinkedIn,5
+sig_0094,2026-05-12,getcargo.io,https://www.linkedin.com/in/auree,Aurelien Aubert,shipped_gtm_result,Aurelien Aubert shared a notable GTM result recently.,LinkedIn,4
+sig_0095,2026-05-21,dealfront.com,https://www.linkedin.com/in/bastiankarweg,Bastian Karweg,posting_ai_gtm,Bastian Karweg posting actively on AI + GTM — strong speaker signal.,LinkedIn,3
+sig_0096,2026-05-09,joinpavilion.com,https://www.linkedin.com/in/samfjacobs,Sam Jacobs,shipped_gtm_result,Sam Jacobs shared a notable GTM result recently.,LinkedIn,3
+sig_0097,2026-06-02,refinelabs.com,https://www.linkedin.com/in/chriswalker171,Chris Walker,posting_ai_gtm,Chris Walker posting actively on AI + GTM — strong speaker signal.,LinkedIn,4
+sig_0098,2026-05-04,exitfive.com,https://www.linkedin.com/in/davegerhardt,Dave Gerhardt,launched_podcast,Dave Gerhardt launched / hosts a GTM podcast.,LinkedIn,5
+sig_0099,2026-06-11,samsalesconsulting.com,https://www.linkedin.com/in/samsalesli,Sam McKenna,posting_ai_gtm,Sam McKenna posting actively on AI + GTM — strong speaker signal.,LinkedIn,5
+sig_0100,2026-06-15,gtmpartners.com,https://www.linkedin.com/in/sangramvajre,Sangram Vajre,launched_podcast,Sangram Vajre launched / hosts a GTM podcast.,LinkedIn,3
+sig_0101,2026-06-04,scottleese.com,https://www.linkedin.com/in/scottleese,Scott Leese,posting_ai_gtm,Scott Leese posting actively on AI + GTM — strong speaker signal.,LinkedIn,3
+sig_0102,2026-06-14,growthpathpartners.com,https://www.linkedin.com/in/lizaadams,Liza Adams,launched_podcast,Liza Adams launched / hosts a GTM podcast.,LinkedIn,2
+sig_0103,2026-05-14,hockeystack.com,https://www.linkedin.com/in/alexsmchoi,Alex Choi,launched_podcast,Alex Choi launched / hosts a GTM podcast.,LinkedIn,3
+sig_0104,2026-06-11,marcussheridan.com,https://www.linkedin.com/in/marcussheridan,Marcus Sheridan,posting_ai_gtm,Marcus Sheridan posting actively on AI + GTM — strong speaker signal.,LinkedIn,4

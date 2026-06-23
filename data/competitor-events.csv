@@ -1,0 +1,20 @@
+event_name,organizer,city,country,start_date,end_date,typical_month,scale,audience_overlap,date_status,clash_risk,note,source
+SaaStr AI Annual 2026,SaaStr,San Mateo,USA,2026-05-12,2026-05-14,May,10000+,High,confirmed_2026,Low (US),#1 B2B SaaS+AI event; US travel draw,saastrannual.com
+SaaStr Europa 2026,SaaStr,London,UK,2026-12-01,2026-12-02,December,2500,High,confirmed_2026 (city historically shifts),High,European SaaStr; London = highest clash risk,saastreuropa.com
+London Tech Week 2026,Informa,London,UK,2026-06-08,2026-06-12,June,45000+,Medium,confirmed_2026,High,Europe's largest tech festival; huge June gravity,londontechweek.com
+B2B Marketing Live,ROAR B2B,London,UK,2026-11-18,2026-11-19,November,4000+,High,confirmed_2026,Medium,UK B2B marketing trade show,b2bmarketingexpo.co.uk
+Pavilion GTM2026,Pavilion,New York,USA,2026-09-28,2026-10-01,Sept/Oct,3000+,High,confirmed_2026,Low (US),Closest peer in audience/positioning,joinpavilion.com
+Pavilion CMO Summit,Pavilion,Atlanta,USA,2026-04-17,2026-04-17,April,200,High,confirmed_2026,Low (US),Executive marketing leaders,joinpavilion.com
+Pavilion CRO Summit,Pavilion,—,USA,2026-06-10,2026-06-10,June,200,High,confirmed_2026,Low (US),Executive revenue leaders; June cluster,joinpavilion.com
+Web Summit,Web Summit,Lisbon,Portugal,2026-11-09,2026-11-12,November,70000+,Medium,confirmed_2026,Medium,Largest EU tech event,websummit.com
+Web Summit Qatar,Web Summit,Doha,Qatar,2026-02-01,2026-02-04,February,25000+,Low,confirmed_2026,Low,Winter MENA edition,qatar.websummit.com
+SaaStock Europe,SaaStock,Dublin,Ireland,2026-10-13,2026-10-14,October,4500+,High,confirmed_2026,Medium,Premier EU B2B SaaS founder event,saastock.com
+Slush,Slush,Helsinki,Finland,2026-11-18,2026-11-19,November,13000+,Medium,confirmed_2026,Medium,Founder/investor heavyweight,slush.org
+INBOUND 2026,HubSpot,Boston,USA,2026-09-16,2026-09-18,September,10000+,Medium,confirmed_2026,Low (US),HubSpot flagship,inbound.com
+Dreamforce 2026,Salesforce,San Francisco,USA,2026-09-15,2026-09-17,September,40000+,Medium,confirmed_2026,Low (US),Largest SaaS event globally,salesforce.com
+Clay Sculpt 2026,Clay,San Francisco,USA,2026-10-08,2026-10-08,October,1500,High,confirmed_2026,Low (US),The GTM conference by Clay; near-identical audience,sculpt.clay.com
+Gong Celebrate London,Gong,London,UK,,,Autumn,2000+,High,typical,High,London tour stop; confirm date,gong.io
+Revenue Operations Festival London,Revenue Operations Alliance,London,UK,2026-06-18,2026-06-18,June,500+,High,confirmed_2026,High,Bundles GTM + Enablement + PMM tracks,revenueoperationsalliance.com
+RevOpsAF Europe,RevOps Co-op,London,UK,2026-06-11,2026-06-11,June,400,High,confirmed_2026,High,RevOps community; June clash cluster,revopscoop.com
+GTM Festival London,Go-to-Market Alliance,London,UK,2026-06-18,2026-06-18,June,400,High,confirmed_2026,High,One-day GTM festival; co-located,gotomarketalliance.com
+Sales Enablement Festival London,Sales Enablement Collective,London,UK,2026-06-18,2026-06-18,June,400,Medium,confirmed_2026,High,Enablement audience,salesenablementcollective.com
