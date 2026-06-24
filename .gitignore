@@ -5,3 +5,12 @@ npm-debug.log*
 # work/ holds outputs — keep them local, ship only the convention README
 work/*
 !work/README.md
+
+# Cowork/Claude personal project settings (machine-specific) — but DO ship .claude/skills/
+.claude/settings.local.json
+
+# stray tooling that leaked into the folder
+.gh/
+
+# GitHub CLI credential (never commit)
+.gh/token

@@ -68,6 +68,23 @@ That was useful and I'll want it every morning. Turn it into a skill called
 read, and the exact output format above. Then show me the skill and do one test run.
 ```
 
+## P4 · Build your brand design system (claude.ai/design)
+*Produces: a reusable on-brand design system — tokens + components — you reference for every dashboard, slide and asset.*
+
+1. Open **claude.ai/design**.
+2. **Upload the repo** (or at least `content-library/brand/kit.md` + `content-library/brand/voice.md`) so it has the brand reference.
+3. Paste:
+```
+Here's our brand kit (content-library/brand/kit.md) and voice (content-library/brand/voice.md).
+Build a GTM Tech Week design system on one page: color tokens (background off-white #fefaef —
+never white; ink #000000; acid-green #b8ff03 as a SIGNAL colour only, never a fill; magenta
+#fc3dd5 secondary), a type scale (tight grotesque sans, mono for data/numbers), and the
+components I'll reuse — KPI tile, card, button, chart styling, and a slide header. Enforce the
+rules: one signal colour per view, black type on off-white, left-aligned, flat. Make it a living
+reference I can reuse.
+```
+*Reuse it later:* in UC3 and the dashboard, say "style this with our design system" and outputs stay on-brand.
+
 ---
 
 ## UC1 · ICP search & prospecting
