@@ -9,7 +9,7 @@ DTSTAMP:20260622T000000Z
 DTSTART:20260626T100000Z
 DTEND:20260626T103000Z
 SUMMARY:Clay — sponsorship intro (London 2027)
-DESCRIPTION:Intro call with Clay re: GTM Tech Week London sponsorship. Clay opened its London office Mar 2026; Europe ~20% of revenue. Goal: scope a curated GTM-engineering track, not a generic booth. See data/account-deep-dive_ANCHOR.md + brain/granola_clay-sponsor-intro-transcript.md.
+DESCRIPTION:Intro call with Clay re: GTM Tech Week London sponsorship. Clay opened its London office Mar 2026; Europe ~20% of revenue. Goal: scope a curated GTM-engineering track, not a generic booth. See brain/account-deep-dive_ANCHOR.md + brain/granola_clay-sponsor-intro-transcript.md.
 LOCATION:Google Meet
 ORGANIZER;CN=Artur Wala:mailto:artur@gtm-week.com
 ATTENDEE;CN=Bruno Estrella;RSVP=TRUE:mailto:bruno@clay.com
