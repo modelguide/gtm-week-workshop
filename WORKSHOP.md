@@ -42,11 +42,22 @@ yourself, in eight short steps.
 
 ## What you need (setup — do this once)
 
-1. **The Claude app**, with **Claude Code** turned on. (Claude Code is the mode that can read and write
-   files for you.)
-2. **This kit folder open in it.** When you open the folder, Claude can see all the files in it.
-3. **A file browser or editor open next to it** (even just Finder/Explorer) pointed at the `brain/`
-   folder, so you can watch new pages appear as you go.
+Follow these five in order. The last one proves it's working before you start.
+
+1. **Open the Claude app** and turn on **Claude Code** (the mode that can read and write files for you).
+2. **Download this kit** and unzip it somewhere you'll find it (e.g. your Desktop).
+3. **Open this kit folder in Claude Code** ("open folder" / "add folder"). Now Claude can see every file
+   in it.
+4. **Open the same folder in a file browser** (Finder on Mac, Explorer on Windows) and click into the
+   `brain/` folder, so you can watch new pages appear as you work.
+5. **Confirm Claude can see the kit.** Paste this one line into Claude and wait for the answer:
+
+   ```
+   Read README.md and tell me the name of this kit in one sentence.
+   ```
+
+   ✅ If Claude answers with "GTM Tech Week London" (or similar), you're connected and ready. If it says
+   it can't find the file, the folder isn't open yet — redo step 3.
 
 That's it. No terminal, no setup commands.
 
@@ -79,7 +90,7 @@ it looks right before moving on.
   ①  Teach it your first call              ④  Give every page one simple shape
   ②  Ask it a question                     ⑤  Decide what to save vs look up
   ③  Let it catch a mistake                ⑥  Add filing rules (no duplicates)
-                                           ⑦  Make it update itself as you work
+                                           ⑦  Make working update the brain
                                            ⑧  Know when you'd need more (and stop)
 
   Progress:  ①──②──③──④──⑤──⑥──⑦──⑧
@@ -315,28 +326,36 @@ you change the top but only add to the bottom.
 **Paste this to Claude:**
 
 ```
-Reshape brain/companies/clay.md and brain/people/bruno-estrella.md into this two-part layout:
+Reshape brain/companies/clay.md and brain/people/bruno-estrella.md into this layout. The page will have
+a frontmatter block at the very top, then the "now" section, then ONE divider line, then the timeline.
 
-- At the very top, a small info block (between --- lines) with: title, type (company or person),
-  created date, updated date, sources, and status: active. For the person page also include their
-  company as company: [[clay]] and their role.
-- Then one short paragraph summarising where things stand right now.
-- Then a "## State" section: the current facts, each with its [Source: ...].
-- Then "## Open Threads": things still up in the air (dates, the new EMEA marketer starting in July).
-- Then "## Sources" and "## Related" (links).
-- Then a line with just --- (this is the divider).
-- Below the divider, a "## Timeline" section: newest first, one dated line per event, e.g.
-  2026-06-18 — Clay intro call; wants co-create not booth [Source: [[2026-06-18-clay-sponsorship-intro]]]
+1. Frontmatter at the very top: a line of ---, then title, type (company or person), created date,
+   updated date, sources, status: active, then another line of ---. (For the person page also include
+   company: [[clay]] and their role inside this block.) This is the standard frontmatter that markdown
+   files start with — two --- lines wrapping a few labelled fields.
+2. Then one short paragraph saying where things stand right now.
+3. Then "## State": the current facts, each with its [Source: ...].
+4. Then "## Open Threads": things still up in the air (dates, the new EMEA marketer starting in July).
+5. Then "## Sources" and "## Related" (links).
+6. Then ONE more line of just --- on its own. This single line is the divider between "now" (above) and
+   "history" (below).
+7. Below that divider, "## Timeline": newest first, one dated line per event, e.g.
+   2026-06-18 — Clay intro call; wants co-create not booth [Source: [[2026-06-18-clay-sponsorship-intro]]]
 
-The rule: the top gets rewritten as things change; the timeline at the bottom only ever gets new lines
-added. Also update the meeting page brain/meetings/2026-06-18-clay-sponsorship-intro.md so the full call
-text sits at the bottom under a --- divider, with your bullet summary on top.
+The rule: the "now" part gets rewritten as things change; the Timeline only ever gets new lines added.
+Also update brain/meetings/2026-06-18-clay-sponsorship-intro.md so the full call text sits at the bottom
+under a --- divider, with your bullet summary on top.
 ```
 
+**You should see** both pages reshaped: a frontmatter block at the top, a "## State" section where every
+line cites a source, and a "## Timeline" at the bottom after a single divider line. (A finished page has
+the two frontmatter `---` lines at the very top, plus one more `---` divider lower down before Timeline.)
+
 **✅ Check before moving on:**
-- [ ] Each page has one `---` divider, with "now" on top and a dated "Timeline" below.
-- [ ] Every line in the top section has a `[Source: ...]`.
-- [ ] Bruno's info block shows `company: [[clay]]`.
+- [ ] Each page has a frontmatter block at the top **and** one divider line lower down, with "now" above
+      it and a dated "## Timeline" below it.
+- [ ] Every line in the "## State" section has a `[Source: ...]`.
+- [ ] Bruno's frontmatter shows `company: [[clay]]`.
 
 **If it looks off:**
 - *It added new facts to the top instead of the timeline* → paste: "New events go as dated lines in the
@@ -381,8 +400,12 @@ Leave the call transcript where it is (that's a one-time event, we keep it). Add
 ## [today's date] refactor | connector posture applied to clay
 ```
 
+**You should see** Clay's frontmatter gain an `attio_company_id:` line, the deal stage/amount disappear
+from the page body (replaced by "look it up in the CRM"), and the call transcript still sitting on the
+meeting page untouched.
+
 **✅ Check before moving on:**
-- [ ] `clay.md`'s info block has the `attio_company_id` line.
+- [ ] `clay.md`'s frontmatter has the `attio_company_id` line.
 - [ ] No hard-coded deal stage or amount is left on the page.
 - [ ] The call transcript is still there.
 
@@ -470,23 +493,26 @@ Add to brain/log.md:
 
 ---
 
-## Step ⑦ — Make it update itself as you work
+## Step ⑦ — Make working update the brain (the write-back habit)
 
 ```
 [Step 7 of 8]  ◉───◉───◉───◉───◉───◉───◉───○
 ```
 
-**What you'll do:** run a ready-made helper ("prep me for tomorrow's calls"), then make sure that doing
-real work **automatically updates the brain** — so it gets richer just from you using it.
+**What you'll do:** run a ready-made helper to prep for your calls, then add the habit that matters most
+— **every time you do work, the brain gets updated too.** You'll do it by hand once so you can see it;
+then we'll point out how to make it stick.
 
-A helper like this is called a **skill** — it's just a saved set of instructions in the `skills/` folder
-that Claude can run when you ask.
+A helper like this is called a **skill** — a saved set of instructions in the `skills/` folder that
+Claude runs when you ask.
 
 **Paste this first message (do the work):**
 
 ```
-Use the instructions in skills/call-prep/SKILL.md to prep me for tomorrow's outside calls, using the
-kit's files (brain/calendar_next-24h.ics and the CRM). Save the briefs to work/call-prep_next-24h.md.
+Use the instructions in skills/call-prep/SKILL.md to prep me for my upcoming outside calls, using the
+kit's files (brain/calendar_next-24h.ics and the CRM). For this lab, treat every event in
+brain/calendar_next-24h.ics as my next-24h schedule, regardless of what today's date is. Save the briefs
+to work/call-prep_next-24h.md.
 ```
 
 **Then paste this second message (make it update the brain):**
@@ -513,8 +539,10 @@ brain is richer than it was five minutes ago — just from doing normal work.
 - *Nothing changed in the brain* → paste: "Now add a dated Timeline line to each person/company the prep
   covered, pointing to the brief. The brain should update whenever we do work."
 
-> This is the whole magic in one habit: **every time you work, the brain learns.** You don't have to
-> remember to update it — the work updates it.
+> This is the whole point in one habit: **work, then write it back.** You did the write-back by hand here
+> so you could see it. To make it permanent, you'd add that same "write it back" instruction to the end
+> of the skill file (`skills/call-prep/SKILL.md`) — then every future run updates the brain on its own,
+> and you never have to remember. That's the rule the pros bake into every skill.
 
 ---
 
@@ -529,8 +557,9 @@ would add, and why you don't need it yet. Then you're done.
 
 There's a powered-up version of all this (a real database, automatic overnight clean-ups, robots that
 read your email and update the brain while you sleep). It's real, and you can switch to it later **without
-losing anything**. But you only need it once your brain gets big — roughly a few hundred pages, or when
-plain files start feeling slow. You're nowhere near that, so you stop here, on purpose.
+losing anything**. But you only need it once your brain gets big — roughly a few hundred pages, **or when
+you hit a specific thing plain files can't do** (search gets slow, links get hard to keep straight).
+You're nowhere near that, so you stop here, on purpose.
 
 **Paste this to Claude:**
 
@@ -542,15 +571,25 @@ Write a short one-page file at brain/agent/[today's date]-gbrain-readiness.md th
 2. What the powered-up "engine" version would add that files can't: fast search when there are tons of
    pages, automatic overnight clean-up, and robots that update the brain on their own (from email, on a
    schedule).
-3. When to switch to it: when there are too many pages or it starts feeling slow (roughly 200–300 pages).
+3. When to switch to it: when there are too many pages or it starts feeling slow (roughly 200–300 pages),
+   OR when you hit a specific thing plain files can't solve.
 4. Why we're not switching yet — and that switching later loses nothing, because the files stay the
    real source.
 Keep it to one page.
 ```
 
+**You should see** a new one-page file at `brain/agent/[today's date]-gbrain-readiness.md` covering those
+four points.
+
 **✅ Check — and you're finished:**
-- [ ] The page names roughly when you'd upgrade (a few hundred pages, or when it feels slow).
+- [ ] The page names roughly when you'd upgrade (a few hundred pages, feels slow, or a specific thing
+      plain files can't solve).
 - [ ] It says upgrading later loses nothing.
+
+**If it looks off:**
+- *It wrote a long essay* → paste: "Trim it to one page, four short points."
+- *It skipped when-to-upgrade* → paste: "Add the trigger: a few hundred pages, or when plain files can't
+  do something you need."
 
 ```
    🏁 DONE.

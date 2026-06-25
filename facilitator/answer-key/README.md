@@ -25,11 +25,11 @@ wiki) so participants build it themselves. Paths below mirror where the file sho
 ```
 step-1-ingest/        the five Karpathy-light pages (the "before" shape)
 step-2-query/         the filed-back recommendation
-step-3-lint/          gaps.md with the four contradictions
-step-4-pageshape/     bruno-estrella.md + meeting page in the gbrain fold
+step-3-lint/          gaps.md with the four contradictions (+ emergent extras)
+step-4-pageshape/     clay.md + bruno-estrella.md + meeting page in the gbrain fold
 step-5-connector/     the clay.md frontmatter delta (note)
-step-6-routers/       RESOLVER.md, SCHEMA.md, the mature clay.md, cognism.md
-step-7-skill/         the write-back note + example Timeline lines
+step-6-routers/       RESOLVER.md, SCHEMA.md, the mature clay.md (ids+aliases), cognism.md
+step-7-skill/         work/call-prep_next-24h.md sample + the write-back note
 step-8-engine/        gbrain-readiness.md
 ```
 
