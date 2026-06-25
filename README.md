@@ -1,5 +1,9 @@
 # GTM Tech Week London — dummy-data kit
 
+> ### 👉 Doing the workshop? Start with **[WORKSHOP.md](WORKSHOP.md)**.
+> A step-by-step lab (no coding, ~60 min) that walks you through building a self-updating "brain" from
+> this kit, one paste-and-check step at a time. Everything below is reference for what's in the box.
+
 A realistic "file drawer" for a GTM team launching the **London edition of GTM Tech Week**. You clone
 it, then **connect or load**: if you have a connector (Attio, Clay, Apollo, Granola, …) you use live
 data; if you do not, you load the matching file. Every connector here has a file that mirrors its real
