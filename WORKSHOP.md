@@ -509,10 +509,9 @@ Claude runs when you ask.
 **Paste this first message (do the work):**
 
 ```
-Use the instructions in skills/call-prep/SKILL.md to prep me for my upcoming outside calls, using the
-kit's files (brain/calendar_next-24h.ics and the CRM). For this lab, treat every event in
-brain/calendar_next-24h.ics as my next-24h schedule, regardless of what today's date is. Save the briefs
-to work/call-prep_next-24h.md.
+Use the instructions in skills/call-prep/SKILL.md to prep me for my upcoming outside calls — the ones
+in brain/calendar_next-24h.ics — using that calendar and the CRM. Save the briefs to
+work/call-prep_next-24h.md.
 ```
 
 **Then paste this second message (make it update the brain):**

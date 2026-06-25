@@ -620,10 +620,13 @@ function vevent(uidS: string, start: Date, mins: number, summary: string, desc: 
 const sponsorContact = { n: 'Bruno Estrella', e: 'bruno@clay.com' }; // Clay Head of Growth Marketing (real)
 const speakerContact = (() => { const a = people.find(p => p.name === 'Sam Jacobs'); return { n: 'Sam Jacobs', e: a?.email || 'sam@joinpavilion.com' }; })();
 const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//GTM Tech Week//London Kit//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH',
-  vevent('clay-sponsor-2026@gtm-week.com', d('2026-06-22'), 30, 'Clay — sponsorship intro (London 2027)',
+  // Both calls sit one day after the workshop's "tomorrow" anchor (workshop run-day = 2026-06-25, so
+  // these land on 2026-06-26). The transcripts (2026-06-16/18) are the prior calls; these are the
+  // upcoming follow-ups call-prep preps for.
+  vevent('clay-sponsor-2026@gtm-week.com', new Date(d('2026-06-26').getTime() + 10*3600000), 30, 'Clay — sponsorship intro (London 2027)',
     'Intro call with Clay re: GTM Tech Week London sponsorship. Clay opened its London office Mar 2026; Europe ~20% of revenue. Goal: scope a curated GTM-engineering track, not a generic booth. See data/account-deep-dive_ANCHOR.md + brain/granola_clay-sponsor-intro-transcript.md.',
     [sponsorContact, { n: 'Krzysztof Pawlak', e: 'krzysztof@gtm-week.com' }], 'Google Meet'),
-  vevent('keynote-target-2026@gtm-week.com', new Date(d('2026-06-23').getTime() + 9*3600000), 30, 'Sam Jacobs (Pavilion) — keynote ask (London 2027)',
+  vevent('keynote-target-2026@gtm-week.com', new Date(d('2026-06-26').getTime() + 14*3600000), 30, 'Sam Jacobs (Pavilion) — keynote ask (London 2027)',
     'Recruitment call with Sam Jacobs (Pavilion) as a tier-1 keynote candidate for London. Pavilion runs GTM2026 — position as community partner + keynote, not competitor. See brain/granola_keynote-target-call-transcript.md + email-threads/.',
     [speakerContact], 'Google Meet'),
   'END:VCALENDAR'].join('\r\n') + '\r\n';
