@@ -45,12 +45,17 @@ results persist, so a data viewer can **reload** `data/` + `work/` and show the 
 - `data/` — the connector files (CRM spine, Clay/Apollo prospects, lookalike scores, signals
   feed, competitor events, do-not-approach, Luma tickets, ad spend, the stale Excel tracker).
   `data/SCHEMA-SOURCES.md` documents every column's provenance.
-- `brain/` — the wiki the LLM owns, plus context the GTM lead already has. The wiki is governed by
-  `brain/RESOLVER.md` (filing) + `brain/SCHEMA.md` (page shape) + each `brain/<folder>/README.md`
-  (local rules), and built by the `compile` skill. Folders: `inbox/` (drop zone), `meetings/`,
-  `sources/`, `companies/`, `people/`, `agent/`, plus `index.md`/`log.md`/`gaps.md`. Also present as
-  starting context: the two ICPs, the anchor deep-dive (`account-deep-dive_ANCHOR.md` = Clay), Granola
-  transcripts, email threads, `calendar_next-24h.ics`. The workshop (`WORKSHOP.md`) builds the wiki.
+  - `data/context_from_claude_workshop/` — **the preserved source pool**: the GTM lead's existing raw
+    *documents* (Granola transcripts, the Sam Jacobs email thread, the Clay deep-dive, the two ICPs).
+    These are the **file-fallback for the demo skills** (`call-prep`, `sponsor-outreach`) when a
+    connector isn't live, **and** the source for the mock `pull` exercise. Not brain pages until pulled
+    into `brain/inbox/` and compiled. (The calendar is connector data, so it lives in `data/` root, not
+    here — you query a calendar, you don't compile it.) See its `README.md`.
+- `brain/` — the wiki the LLM owns. Governed by `brain/RESOLVER.md` (filing) + `brain/SCHEMA.md` (page
+  shape) + each `brain/<folder>/README.md` (local rules), and built by the `compile` skill. Folders:
+  `inbox/` (drop zone), `meetings/`, `sources/`, `companies/`, `people/`, `agent/`, plus
+  `index.md`/`log.md`/`gaps.md`. Starts empty in the entity folders; the workshop (`WORKSHOP.md`) builds
+  it by compiling the inbox. Raw material lives in `data/context_from_claude_workshop/` until pulled in.
 - `content-library/` — offers and content in the house voice: two past posts, the sponsorship
   prospectus, the speaker-invite email, the ticket-launch block, plus `brand/voice.md` and
   `brand/kit.md` (palette: off-white `#fefaef`, black, acid-green `#b8ff03`, magenta `#fc3dd5`).
@@ -89,6 +94,9 @@ The folder READMEs are operating rules, not documentation.
 Reference skills ship in `skills/`:
 - **`skills/compile/SKILL.md`** — the **ingest** engine: turns `brain/inbox/` items into filed, linked
   brain pages following the read-order above. The heart of the workshop.
+- **`skills/pull/SKILL.md`** — a **mock connector pull**: copies one fixture from
+  `data/context_from_claude_workshop/` into `brain/inbox/`, staged only (no compile). Teaches that
+  pull (bring raw in) ≠ compile (file it).
 - **`skills/call-prep/SKILL.md`** — one-page brief per external call in the next 24h. The
   "install one" example for Part III.
 - **`skills/sponsor-outreach/SKILL.md`** — drafts a tailored sponsorship prospectus and a

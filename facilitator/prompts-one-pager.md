@@ -57,7 +57,7 @@ GBP — and flag any data-quality issues you notice.
 ## P3 · Run the motion, then make it a skill
 *Produces: a one-page prep per call, then a saved `call-prep` skill + one test run (the hero).*
 ```
-I have two external calls tomorrow (see brain/calendar_next-24h.ics). For each, pull
+I have two external calls tomorrow (see data/calendar_next-24h.ics). For each, pull
 what we know from the CRM spine, the Granola transcripts and email-threads in brain/,
 and the signals_feed. Produce a one-page prep: where the relationship stands, the
 "why now", 3 questions, likely objections, and the next step.
@@ -107,7 +107,7 @@ trust the thin attio_people rows). Write the enriched board back to work/target-
 ```
 Score our past Warsaw sponsors in lookalike_features.csv, then find the 20 London/UK
 companies that look most like our best ones. Then deep-dive our anchor account (see
-brain/account-deep-dive_ANCHOR.md — Clay): are they a fit to sponsor London, and who is
+data/context_from_claude_workshop/account-deep-dive_ANCHOR.md — Clay): are they a fit to sponsor London, and who is
 the single best tier-1 keynote target, with the "why now"? Show your scoring.
 ```
 

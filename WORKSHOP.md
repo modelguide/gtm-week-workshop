@@ -228,6 +228,42 @@ in sources/.`
 real-world thing = one page.
 
 ---
+
+## Step 5b — Pull more context (optional)
+
+**What you're doing:** seeing where raw material comes from *before* it hits the inbox. Your kit has a
+**source pool** (`data/context_from_claude_workshop/`) standing in for your connectors (Granola, Gmail,
+Calendar). You'll "pull" an old call into the inbox, then compile it — so you feel the difference
+between **pull** and **compile**.
+
+**Paste this (the pull):**
+```
+Use the pull skill (skills/pull/SKILL.md) to simulate a Granola pull: copy
+data/context_from_claude_workshop/granola_keynote-target-call-transcript.md into brain/inbox/ with a
+clean filename. Stage it only — don't analyze or compile it. Then tell me what's in the inbox and what
+to run next.
+```
+
+**You should see:** a new file in `brain/inbox/` (the Sam Jacobs keynote call) and **nothing else
+changed** — no new brain pages yet.
+
+**Then paste this (the compile):**
+```
+Compile the new inbox item.
+```
+
+**You should see:** now it's filed — a `meetings/` page (transcript inline), a `companies/` page for
+Pavilion, a `people/` page for Sam Jacobs, and `index.md`/`log.md` updated.
+
+**Check before moving on:**
+- [ ] After the **pull**, only the inbox changed (a file appeared) — no brain pages were written.
+- [ ] After the **compile**, the call became a meeting page and entity pages appeared.
+
+**What you just learned:** **Pull ≠ compile.** Pull brings raw material into the inbox; compile reads it,
+routes it, preserves it, and updates the pages. Real connectors (Granola/Gmail) are just the live
+version of that pull.
+
+---
 ---
 
 # Beat 4 — Extend (change a rule, watch the brain obey)

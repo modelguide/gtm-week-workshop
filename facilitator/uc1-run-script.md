@@ -17,7 +17,7 @@ Run UC1 once yourself, file-only, before the day. The answers you should not be 
 - **The money beat:** Clay scores #1 on fit *and* is excluded. That's the lesson, not a bug.
 - **Join keys:** company on `company_domain`, person on `person_linkedin_url`. Everything
   resolves file-only; writeback needs Attio connected.
-- **Why-now lives in** `signals_feed.csv`; the filter lives in `brain/icp_sponsor.md`.
+- **Why-now lives in** `signals_feed.csv`; the filter lives in `data/context_from_claude_workshop/icp_sponsor.md`.
 - **People layer is thin — that's the lesson.** ~109 people are real with LinkedIn (the
   speakers); the ~291 sponsor contacts are placeholders (no LinkedIn) — don't pitch them. The
   contact move is **enrich the COMPANY → find the current Head of Demand Gen / CMO.** This is the
@@ -35,7 +35,7 @@ and zero time. Let Claude rank them against who we actually want — and respect
 SAY: "First the filter, then the ranking. The ICP is the filter; the 'why now' is the rank."
 PASTE:
 ```
-Read brain/icp_sponsor.md — that's the filter. Score every company in
+Read data/context_from_claude_workshop/icp_sponsor.md — that's the filter. Score every company in
 data/clay_table_sponsor-prospects.csv and data/lookalike_features.csv against it. Exclude
 anything in data/do-not-approach.csv. For the top 20, give me: company, fit score, tier,
 recommended package, and the strongest "why now" from data/signals_feed.csv. Show it as a
@@ -58,7 +58,7 @@ angle instead of a sponsorship pitch.
 ### 3 · Rank the speakers (≈10 min) — lighter
 PASTE:
 ```
-Now the speakers. Read brain/icp_speaker.md. From data/apollo_people-export_speakers.csv, give
+Now the speakers. Read data/context_from_claude_workshop/icp_speaker.md. From data/apollo_people-export_speakers.csv, give
 me the top 10 UK/London speaker targets: name, title, company, the topic they'd own, and any
 "why now" from signals_feed.csv. Skip anyone whose company is in do-not-approach.csv.
 ```

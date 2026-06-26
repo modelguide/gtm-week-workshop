@@ -12,7 +12,7 @@
 5. **Install the call-prep skill.** Point the skill loader at `skills/call-prep/SKILL.md` (or
    paste it into skill-creator and save).
 6. **Run it.** Ask: *"Prep me for tomorrow's external calls."* You get a one-page brief per call
-   from `brain/calendar_next-24h.ics` + the CRM + transcripts + signals — entirely from files.
+   from `data/calendar_next-24h.ics` + the CRM + transcripts + signals — entirely from files.
 
 You're now in the loop: Project → context → skill → run. Everything else (UC1–3, the dashboard)
 builds on these same files. If you have a connector (Attio, Clay, Granola, …) you can flip it on

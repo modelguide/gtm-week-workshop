@@ -21,11 +21,11 @@ operator before they walk into the room. No fabrication: if a field is unknown, 
 
 ## Connect-or-load (read connectors.config.json first)
 Per-connector, not all-or-nothing:
-- **Calendar:** Google Calendar live if connected, else read `brain/calendar_next-24h.ics`.
+- **Calendar:** Google Calendar live if connected, else read `data/calendar_next-24h.ics`.
 - **CRM:** Attio (or HubSpot) live if connected, else read the spine files
   (`data/attio_companies.csv`, `data/attio_people.csv`, `data/attio_deals.csv`).
-- **Transcripts:** Granola live if connected, else read `brain/granola_*-transcript.md`.
-- **Email:** Gmail live if connected, else read `brain/email-threads/*.md`.
+- **Transcripts:** Granola live if connected, else read `data/context_from_claude_workshop/granola_*-transcript.md` (and any meeting pages already compiled into `brain/meetings/`).
+- **Email:** Gmail live if connected, else read `data/context_from_claude_workshop/email-threads/*.md`.
 - **Signals:** Exa live if connected, else read `data/signals_feed.csv`.
 
 The default in this kit is FILE-ONLY. A participant with no connectors does nothing special —
@@ -49,7 +49,7 @@ the files are the source of truth. Do NOT edit anything under `data/`.
 6. **Write the one-pager** (format below).
 
 ## Handling a partial / garbled transcript
-`brain/granola_warsaw-debrief-transcript.md` has `transcript_status: partial` and real
+`data/context_from_claude_workshop/granola_warsaw-debrief-transcript.md` has `transcript_status: partial` and real
 `[recording dropped]` / `[inaudible]` gaps. If a transcript is partial:
 - Use only what is legible. Do **not** infer through a `[gap]`.
 - Mark any figure or claim that sits next to a gap as **unconfirmed**.
@@ -81,7 +81,7 @@ Never invent the missing content to make the brief look complete.
 ## Worked example (file-only, from this kit's data)
 Tomorrow has two external calls in `calendar_next-24h.ics`:
 - **Clay — sponsorship intro** (Bruno Estrella, bruno@clay.com). Relationship: warm; Clay is
-  the anchor account (`account-deep-dive_ANCHOR.md`), opened London office Mar 2026. Why now:
+  the anchor account (`data/context_from_claude_workshop/account-deep-dive_ANCHOR.md`), opened London office Mar 2026. Why now:
   3 signals on `clay.com` (opened London office, raised round, hired Head of Demand Gen).
   Known objection from the transcript: "generic booth isn't us" → pitch a co-created
   GTM-engineering track + Clay Club London tie-in. Next step: send the one-page co-creation

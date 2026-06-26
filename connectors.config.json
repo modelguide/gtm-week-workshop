@@ -37,23 +37,23 @@
     {
       "id": "exa", "role": "UC2 — account intel / web research / lookalikes",
       "live": { "type": "mcp", "server": "Exa" },
-      "files": ["data/lookalike_features.csv", "data/signals_feed.csv", "brain/account-deep-dive_ANCHOR.md"],
+      "files": ["data/lookalike_features.csv", "data/signals_feed.csv", "data/context_from_claude_workshop/account-deep-dive_ANCHOR.md"],
       "join_on": ["company_domain", "person_linkedin_url"]
     },
     {
       "id": "granola", "role": "Meeting prep — prior call transcripts",
       "live": { "type": "mcp", "server": "Granola" },
-      "files": ["brain/granola_clay-sponsor-intro-transcript.md", "brain/granola_keynote-target-call-transcript.md", "brain/granola_warsaw-debrief-transcript.md"]
+      "files": ["data/context_from_claude_workshop/granola_keynote-target-call-transcript.md", "data/context_from_claude_workshop/granola_warsaw-debrief-transcript.md"]
     },
     {
       "id": "gmail", "role": "Meeting prep — email context",
       "live": { "type": "mcp", "server": "Gmail" },
-      "files": ["brain/email-threads/clay-sponsorship-thread.md", "brain/email-threads/keynote-sam-jacobs-thread.md"]
+      "files": ["data/context_from_claude_workshop/email-threads/keynote-sam-jacobs-thread.md"]
     },
     {
       "id": "google_calendar", "role": "Meeting prep — next 24h",
       "live": { "type": "mcp", "server": "Google Calendar" },
-      "files": ["brain/calendar_next-24h.ics"]
+      "files": ["data/calendar_next-24h.ics"]
     },
     {
       "id": "luma", "role": "Dashboard — ticket sales",

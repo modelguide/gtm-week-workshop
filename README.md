@@ -49,10 +49,18 @@ not all-or-nothing — you might pull Attio live but load the Luma CSV.
 | `sponsorship-tracker_WIP.xlsx` | hand-built Excel | **Deliberately stale & wrong** vs `attio_deals.csv`. The verify-then-trust beat. |
 | `SCHEMA-SOURCES.md` | — | Where every column header came from, with sources + confidence. |
 
-### `brain/` — context the GTM lead already has
-ICPs (`icp_sponsor.md`, `icp_speaker.md`), the **anchor account deep-dive** (`account-deep-dive_ANCHOR.md`
-— Clay, fully real), three Granola transcripts (one intentionally partial), two email threads, and
-`calendar_next-24h.ics` (two external calls: a sponsor + a tier-1 speaker).
+### `brain/` — the wiki you build
+A set of linked markdown pages the LLM owns, governed by `RESOLVER.md` (filing) + `SCHEMA.md` (page
+shape) + per-folder `README.md`s, and built by the `compile` skill. Starts empty in the entity folders
+(`meetings/`, `sources/`, `companies/`, `people/`, `agent/`); `inbox/` holds the items to compile. The
+workshop (`WORKSHOP.md`) walks you through building it.
+
+### `data/context_from_claude_workshop/` — the source pool
+The GTM lead's existing raw **documents**, preserved as fixtures: the ICPs (`icp_sponsor.md`,
+`icp_speaker.md`), the **Clay deep-dive** (`account-deep-dive_ANCHOR.md`, fully real), Granola
+transcripts (one intentionally partial), and the Sam Jacobs email thread. These are the file-fallback
+for the demo skills, and the source for the mock `pull` exercise — raw until pulled into `brain/inbox/`
+and compiled. (The calendar is connector data and lives in `data/` root — you don't pull a calendar.)
 
 ### `content-library/` — offers + content in the GTM Tech Week voice
 Two past posts, the sponsorship prospectus, a speaker-invite email, a ticket-launch landing block, and

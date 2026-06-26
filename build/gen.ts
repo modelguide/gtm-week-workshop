@@ -624,13 +624,13 @@ const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//GTM Tech Week//London Ki
   // these land on 2026-06-26). The transcripts (2026-06-16/18) are the prior calls; these are the
   // upcoming follow-ups call-prep preps for.
   vevent('clay-sponsor-2026@gtm-week.com', new Date(d('2026-06-26').getTime() + 10*3600000), 30, 'Clay — sponsorship intro (London 2027)',
-    'Intro call with Clay re: GTM Tech Week London sponsorship. Clay opened its London office Mar 2026; Europe ~20% of revenue. Goal: scope a curated GTM-engineering track, not a generic booth. See brain/account-deep-dive_ANCHOR.md + brain/granola_clay-sponsor-intro-transcript.md.',
+    'Intro call with Clay re: GTM Tech Week London sponsorship. Clay opened its London office Mar 2026; Europe ~20% of revenue. Goal: scope a curated GTM-engineering track, not a generic booth. See data/context_from_claude_workshop/account-deep-dive_ANCHOR.md + brain/inbox/clay-sponsorship-intro.md.',
     [sponsorContact, { n: 'Krzysztof Pawlak', e: 'krzysztof@gtm-week.com' }], 'Google Meet'),
   vevent('keynote-target-2026@gtm-week.com', new Date(d('2026-06-26').getTime() + 14*3600000), 30, 'Sam Jacobs (Pavilion) — keynote ask (London 2027)',
-    'Recruitment call with Sam Jacobs (Pavilion) as a tier-1 keynote candidate for London. Pavilion runs GTM2026 — position as community partner + keynote, not competitor. See brain/granola_keynote-target-call-transcript.md + email-threads/.',
+    'Recruitment call with Sam Jacobs (Pavilion) as a tier-1 keynote candidate for London. Pavilion runs GTM2026 — position as community partner + keynote, not competitor. See data/context_from_claude_workshop/granola_keynote-target-call-transcript.md + data/context_from_claude_workshop/email-threads/.',
     [speakerContact], 'Google Meet'),
   'END:VCALENDAR'].join('\r\n') + '\r\n';
-write('calendar_next-24h.ics', ics, BRAIN);
+write('calendar_next-24h.ics', ics, DATA); // connector data, not a pullable doc — lives in data/ root
 
 // ── 19b. sponsorship-tracker_WIP.xlsx — deliberately STALE & WRONG vs attio_deals ──
 // The GTM lead's hand-built Excel view. Reconciling it against the spine is the verify-then-trust beat.
