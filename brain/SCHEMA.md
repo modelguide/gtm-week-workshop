@@ -26,7 +26,7 @@ Every page opens with a YAML block fenced by `---` lines:
 ```yaml
 ---
 title: <Page Title>
-type: person | company | meeting | source | agent
+type: person | company | meeting | source | agent | strategy
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: [<slug>, ...]
@@ -42,6 +42,7 @@ Per type, add:
   `transcript_status: ok | partial | missing`
 - **source:** `source_kind: email | article | research | deck | web`, `date:` (the source's own date)
 - **agent:** `agent_kind: recommendation | report | audit | lint`
+- **strategy:** `strategy_kind: icp | positioning | segment | plan`, `scope:` (what it governs)
 
 **`aliases:` is load-bearing on people and companies.** It catches every spelling (nicknames, legal
 names, domains). When you meet a new variant for a known entity, **add it to aliases — never make a new
@@ -49,7 +50,7 @@ page.**
 
 ## 3. The two-layer page (compiled-truth + timeline)
 
-The core pattern for **person, company** pages: current truth on top, dated history below a fold.
+The core pattern for **person, company, strategy** pages: current truth on top, dated history below a fold.
 
 ```
 ---

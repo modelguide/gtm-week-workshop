@@ -1,9 +1,14 @@
 ---
-type: note
+title: "Salesloft — verbal yes on Headline"
+type: source
+source_kind: note
+created: 2026-06-26
+updated: 2026-06-26
 date: 2026-06-24
 from: Artur Wala
 subject: "Salesloft — verbal yes on Headline"
 source: internal-note
+status: active
 ---
 
 Quick note from the Salesloft call so we don't lose it.
