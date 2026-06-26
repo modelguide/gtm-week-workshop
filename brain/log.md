@@ -28,3 +28,7 @@ Format: `## [YYYY-MM-DD] <operation> | <subject>` where operation is `ingest` (c
 - Created: [[icp-gtm-week]]
 - Updated: RESOLVER.md, SCHEMA.md, CLAUDE.md (folder list), index.md
 - Rule: "durable strategy artifact → strategy/<slug>.md", placed above companies/ (first-match-wins)
+
+## [2026-06-26] extend | Add offer page to strategy/
+- Created: [[offer-gtm-week]] (sponsorship packages + ticket tiers)
+- Updated: SCHEMA.md (strategy_kind += offer), index.md, [[icp-gtm-week]], [[clay]], [[salesloft]] (backlinks)

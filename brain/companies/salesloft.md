@@ -27,6 +27,7 @@ Salesloft is a confirmed-in-principle sponsor for GTM Tech Week London 2027: a *
 
 ## Related
 - [[aaron-lindqvist]]
+- [[offer-gtm-week]] — the Headline Partner (£45k) tier they verbally agreed to.
 
 ---
 

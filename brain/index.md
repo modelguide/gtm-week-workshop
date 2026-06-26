@@ -26,6 +26,7 @@ The compiler keeps this current: one row per page, newest first, grouped by type
 
 ## Strategy
 - [[icp-gtm-week]] — Ideal customer profile for gtm-week.com: who we sell sponsorship to, the audience, speaker supply, why-now triggers, anti-ICP. 2026-06-26
+- [[offer-gtm-week]] — What we sell and at what price: sponsorship packages (£4.5k–£45k) + ticket tiers (£195–£1,580). 2026-06-26
 
 ## Agent
 _(empty — saved answers and reports land here)_

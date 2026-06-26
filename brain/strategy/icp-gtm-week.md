@@ -64,6 +64,7 @@ Person-level (speaker) triggers [Source: data/context_from_claude_workshop/icp_s
 - [Source: content-library/sponsorship-prospectus.md]
 
 ## Related
+- [[offer-gtm-week]] — the packages/prices each ICP tier maps to.
 - [[clay]] — anchor A-tier account; the co-create-don't-sell-a-booth archetype.
 - [[salesloft]] — Headline-tier (£45k) sponsor in the RevTech sub-segment.
 

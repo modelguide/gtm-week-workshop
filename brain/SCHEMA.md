@@ -42,7 +42,7 @@ Per type, add:
   `transcript_status: ok | partial | missing`
 - **source:** `source_kind: email | article | research | deck | web`, `date:` (the source's own date)
 - **agent:** `agent_kind: recommendation | report | audit | lint`
-- **strategy:** `strategy_kind: icp | positioning | segment | plan`, `scope:` (what it governs)
+- **strategy:** `strategy_kind: icp | positioning | segment | plan | offer`, `scope:` (what it governs)
 
 **`aliases:` is load-bearing on people and companies.** It catches every spelling (nicknames, legal
 names, domains). When you meet a new variant for a known entity, **add it to aliases — never make a new

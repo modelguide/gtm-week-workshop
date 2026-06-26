@@ -31,6 +31,7 @@ Clay (clay.com) is a top sponsor target for GTM Tech Week London 2027 — they e
 
 ## Related
 - [[bruno-estrella]]
+- [[offer-gtm-week]] — the package menu Clay is co-creating around rather than buying off the shelf.
 
 ---
 
