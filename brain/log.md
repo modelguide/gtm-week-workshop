@@ -10,3 +10,21 @@ Format: `## [YYYY-MM-DD] <operation> | <subject>` where operation is `ingest` (c
 `lint`.
 
 <!-- New entries go below this line, newest last. Your first compile will add the first one. -->
+
+## [2026-06-26] ingest | Clay sponsorship intro (London 2027)
+- Compiled: 1 item
+- Created: [[2026-06-18-clay-sponsorship-intro]], [[clay]], [[bruno-estrella]]
+- Updated: index.md
+- Gaps added: 2
+
+## [2026-06-26] ingest | Clay follow-up email + Salesloft Headline note
+- Compiled: 2 items
+- Created: [[2026-06-20-clay-followup-email]], [[2026-06-24-salesloft-verbal-yes]], [[salesloft]], [[aaron-lindqvist]]
+- Updated: [[clay]], [[bruno-estrella]], index.md
+- Gaps added: 4
+
+## [2026-06-26] extend | New strategy/ folder + ICP page
+- Added folder: brain/strategy/ (README + RESOLVER rule above the company rule)
+- Created: [[icp-gtm-week]]
+- Updated: RESOLVER.md, SCHEMA.md, CLAUDE.md (folder list), index.md
+- Rule: "durable strategy artifact → strategy/<slug>.md", placed above companies/ (first-match-wins)

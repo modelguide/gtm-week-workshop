@@ -10,16 +10,22 @@
 The compiler keeps this current: one row per page, newest first, grouped by type.
 
 ## Companies
-_(empty — compile will add a row here when the first company page is created)_
+- [[clay]] — Top sponsor target; near yes-in-principle on a co-created GTM-engineering track + Clay Club London, not a booth. 2026-06-26
+- [[salesloft]] — Verbal yes on Headline Partner (£45k); wants main-stage logo + session slot; order form pending. 2026-06-26
 
 ## People
-_(empty — compile will add a row here when the first person page is created)_
+- [[bruno-estrella]] — Head of Growth Marketing, Clay; warm entry point, firm on operator-first format. 2026-06-26
+- [[aaron-lindqvist]] — VP Marketing EMEA, Salesloft; sponsor-side owner of the £45k Headline verbal yes. 2026-06-26
 
 ## Meetings
-_(empty — compile will add a row here when the first meeting is filed)_
+- [[2026-06-18-clay-sponsorship-intro]] — Clay sponsorship intro: co-created track over booth, budget not the blocker, watch the date. 2026-06-26
 
 ## Sources
-_(empty — non-meeting raw imports land here after compile)_
+- [[2026-06-20-clay-followup-email]] — Bruno's follow-up: track sold internally, names Lucia Romano, avoid week of 13 April. 2026-06-26
+- [[2026-06-24-salesloft-verbal-yes]] — Internal note: Salesloft verbal yes on £45k Headline via Aaron Lindqvist. 2026-06-26
+
+## Strategy
+- [[icp-gtm-week]] — Ideal customer profile for gtm-week.com: who we sell sponsorship to, the audience, speaker supply, why-now triggers, anti-ICP. 2026-06-26
 
 ## Agent
 _(empty — saved answers and reports land here)_

@@ -53,7 +53,7 @@ results persist, so a data viewer can **reload** `data/` + `work/` and show the 
     here — you query a calendar, you don't compile it.) See its `README.md`.
 - `brain/` — the wiki the LLM owns. Governed by `brain/RESOLVER.md` (filing) + `brain/SCHEMA.md` (page
   shape) + each `brain/<folder>/README.md` (local rules), and built by the `compile` skill. Folders:
-  `inbox/` (drop zone), `meetings/`, `sources/`, `companies/`, `people/`, `agent/`, plus
+  `inbox/` (drop zone), `meetings/`, `sources/`, `companies/`, `people/`, `agent/`, `strategy/`, plus
   `index.md`/`log.md`/`gaps.md`. Starts empty in the entity folders; the workshop (`WORKSHOP.md`) builds
   it by compiling the inbox. Raw material lives in `data/context_from_claude_workshop/` until pulled in.
 - `content-library/` — offers and content in the house voice: two past posts, the sponsorship

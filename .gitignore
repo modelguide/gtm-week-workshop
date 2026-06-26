@@ -14,3 +14,12 @@ work/*
 
 # GitHub CLI credential (never commit)
 .gh/token
+
+# Local secrets — never commit
+.env
+.env.*
+*.local
+
+# Obsidian vault settings (machine-specific)
+.obsidian/
+brain/.obsidian/

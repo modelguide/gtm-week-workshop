@@ -1,10 +1,15 @@
 ---
-type: email
+title: "Re: GTM Tech Week London — co-created track"
+type: source
+source_kind: email
+created: 2026-06-26
+updated: 2026-06-26
 date: 2026-06-20
 from: Bruno Estrella <bruno@clay.com>
 to: Artur Wala <artur@gtm-week.com>
 subject: "Re: GTM Tech Week London — co-created track"
 source: gmail
+status: active
 ---
 
 Hi Artur,

@@ -21,15 +21,20 @@ ones the GTM Tech Week scenario needs. Adding one is the **Extend** exercise.
 Walk top to bottom. **First match wins.** What is the primary subject of this note?
 
 1. **A specific named person** (a human) → `people/<first-last>.md`
-2. **A specific organization** (company, sponsor, partner, competitor) → `companies/<slug>.md`
-3. **A meeting that happened at a specific time** (your analysis on top, the **full transcript inline**
+2. **A durable strategy artifact** (an ICP, positioning/messaging thesis, segment definition, account-tier
+   model, or GTM plan — a bet that stays true across many calls, not a record of one event) →
+   `strategy/<slug>.md`. **This sits above the company rule on purpose:** an ICP or segment is *also*
+   about companies, and the tree is first-match-wins, so a strategy artifact placed below `companies/`
+   would mis-file as a company.
+3. **A specific organization** (company, sponsor, partner, competitor) → `companies/<slug>.md`
+4. **A meeting that happened at a specific time** (your analysis on top, the **full transcript inline**
    below the fold) → `meetings/<YYYY-MM-DD>-<slug>.md`
-4. **A non-meeting raw import** (an email, article, research doc, deck, web clipping — read but never
+5. **A non-meeting raw import** (an email, article, research doc, deck, web clipping — read but never
    rewritten) → `sources/<YYYY-MM-DD>-<slug>.md`
-5. **An agent-produced deliverable** (a saved answer, recommendation, audit, lint report — something
+6. **An agent-produced deliverable** (a saved answer, recommendation, audit, lint report — something
    *Claude* wrote for you to read) → `agent/<slug>.md`
-6. **An open question, contradiction, or research lead** → append **one line** to `gaps.md` (no new file)
-7. **You don't know yet** → leave it in `inbox/` and say so. "Nothing fits" is a signal the rules need a
+7. **An open question, contradiction, or research lead** → append **one line** to `gaps.md` (no new file)
+8. **You don't know yet** → leave it in `inbox/` and say so. "Nothing fits" is a signal the rules need a
    new rule — raise it; don't invent a folder on your own.
 
 > **Do not create a new top-level `brain/` folder** unless you're doing the **Extend** exercise (where
@@ -41,6 +46,9 @@ Walk top to bottom. **First match wins.** What is the primary subject of this no
 - **Person vs. Company.** About the human (their role, what they want, the relationship)? → `people/`.
   About the organization (what it does, its stage, its deals)? → `companies/`. Both pages link to each
   other.
+- **Strategy vs. Company.** A definition of *a kind of customer* (an ICP, a segment, a tier model) →
+  `strategy/`. A specific named organization → `companies/`. The ICP lists example companies and the
+  company pages cite the ICP; they are not the same page.
 - **Meeting vs. Source.** A *meeting* is your analysis of a call **plus its transcript inline**. A
   *source* is any other raw import (an email, an article, a deck). A sponsorship call → `meetings/`. A
   follow-up email → `sources/`.
