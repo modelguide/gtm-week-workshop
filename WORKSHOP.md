@@ -7,6 +7,65 @@ ask, check, and lightly extend. You'll do it by pasting prompts and looking at t
 
 ---
 
+## Why you're doing this
+
+Right now your GTM memory is **scattered** — and it quietly disagrees with itself:
+
+```
+   the call (Granola)     the CRM            an email thread     the tracker
+   "what did Bruno         "what stage        "did we ever        "...is this even
+    actually say?"          is Clay at?"        agree on dates?"     up to date?"
+   ─────────────────      ─────────────      ───────────────     ──────────────────
+   in a transcript        live & changing    buried in Gmail     stale, drifting
+```
+
+So every real question starts with **archaeology** — opening four places and hoping they line up. *Is Clay a booth or a co-created track? Which file do we trust? Did the tracker drift from the CRM?*
+
+By the end of this hour you'll have a **brain**: one connected memory that answers those in seconds, **with receipts.**
+
+```
+  raw context ──pull──▶ inbox ──compile──▶  ┌──────────── YOUR BRAIN ─────────────┐
+  (calls, emails,                           │ meetings  — what happened (+ the     │
+   docs)                                     │            transcript, preserved)    │
+                                            │ sources   — raw docs, kept as-is     │
+                                            │ companies — current truth + history  │
+                                            │ people    — current truth + history  │
+                                            │ agent     — answers you saved        │
+                                            │ gaps      — contradictions & to-dos  │
+                                            │ index/log — the map and the diary    │
+                                            └─────────────────┬───────────────────┘
+                                                              │ ask
+                                       "Co-create a track, not a booth — and here's
+                                        the exact call that came from."
+```
+
+**The shift:** you stop re-deriving the answer from scattered files every time. You **compile once**, and from then on every question starts from the brain — and every claim points back to the call, email, or doc it came from.
+
+### What the brain actually is
+A small, structured wiki Claude keeps current for you:
+- **Raw material is preserved** — a call's transcript is *kept*, not summarized away.
+- **Current understanding is compiled on top** — the "what's true now" you read first.
+- **Every claim cites its source** — no fact without a receipt.
+- **Every new source updates the same memory** — it compounds instead of scattering.
+
+### What you'll actually do
+You are **not** here to hand-build the filing system. The plumbing is already installed. You're here to **run it, look under the hood, and change one rule** — an operator learning a machine, not a plumber installing one.
+
+## What's already set up for you
+
+| Already installed | What it does |
+|---|---|
+| `brain/RESOLVER.md` | decides **where** each thing goes |
+| each folder's `README.md` | the **local rule** for that folder |
+| `brain/SCHEMA.md` | the **shape** every page takes |
+| `skills/compile/` | runs the **ingest loop** (raw → filed pages) |
+| `skills/pull/` | a mock connector **pull** (brings raw into the inbox) |
+| `brain/inbox/` | raw items **waiting to be compiled** |
+
+Your hour: run the loop, see what it makes, understand *why* it routed that way, then change one rule and watch the brain obey.
+
+---
+
 ## How this works
 
 **Where you run it.** Claude Code, inside the Claude app, with this kit folder open.
@@ -31,13 +90,6 @@ on a page names its source.
 3. Open the folder in a file browser too (Finder/Explorer), so you can watch `brain/` fill up.
 4. Confirm Claude can see the kit — paste: `Read README.md and tell me the name of this kit in one sentence.`
    ✅ If it answers "GTM Tech Week London," you're ready.
-
-### The loop you're about to learn
-```
-   raw item  →  brain/inbox/  →  COMPILE  →  meetings / sources / companies / people
-                                              + index + log + gaps
-                                          →  ask it · check it · extend it
-```
 
 ---
 ---
