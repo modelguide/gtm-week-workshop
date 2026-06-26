@@ -249,7 +249,7 @@ changed** — no new brain pages yet.
 
 **Then paste this (the compile):**
 ```
-Compile the new inbox item.
+Compile the Sam Jacobs keynote item you just pulled into the inbox (just that one).
 ```
 
 **You should see:** now it's filed — a `meetings/` page (transcript inline), a `companies/` page for
