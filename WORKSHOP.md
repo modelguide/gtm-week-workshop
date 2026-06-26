@@ -1,629 +1,300 @@
-# Build your GTM brain
+# Workshop — build a working brain
 
-### A hands-on lab. No coding. About 60 minutes. You build it yourself.
+### Hands-on. No coding. ~60 minutes. You operate it; you don't read manuals.
 
----
-
-## Why you're doing this
-
-Right now everything you know about your sponsors, speakers, and deals is **scattered**:
-
-```
-   Granola calls        the CRM          old emails        a spreadsheet
-   ────────────         ────────         ──────────        ───────────
-   "what did Bruno      "what stage      "did we ever      "...this is
-    say again?"          is Clay?"         agree dates?"     out of date"
-```
-
-So before every call you go digging. Your tracker spreadsheet is wrong the moment you close it. A new
-teammate means re-explaining everything from scratch.
-
-**By the end of this lab you'll have built a "brain":**
-
-```
-                          ┌─────────────────────┐
-   you ask in plain  ───▶ │      YOUR BRAIN     │ ───▶  a cited answer,
-   English               │  one connected place │       in seconds
-                          │  that knows every    │
-                          │  company, person,    │
-                          │  deal — and updates  │
-                          │  itself as you work  │
-                          └─────────────────────┘
-```
-
-One place that knows everything, that you talk to in plain English, that **catches mistakes in your
-spreadsheet**, and that **gets smarter every time you use it**. You'll build it from a folder of files,
-yourself, in eight short steps.
-
-> The big idea behind this is called the **"LLM wiki"** (from Andrej Karpathy) and the grown-up version
-> is called **gbrain**. You don't need to remember those names. You just need to follow the steps.
+By the end you'll have a small **brain** — a set of linked notes an AI keeps current — that you can run,
+ask, check, and lightly extend. You'll do it by pasting prompts and looking at the files that appear.
 
 ---
 
-## What you need (setup — do this once)
+## How this works
 
-Follow these five in order. The last one proves it's working before you start.
+**Where you run it.** Claude Code, inside the Claude app, with this kit folder open.
 
-1. **Open the Claude app** and turn on **Claude Code** (the mode that can read and write files for you).
-2. **Download this kit** and unzip it somewhere you'll find it (e.g. your Desktop).
-3. **Open this kit folder in Claude Code** ("open folder" / "add folder"). Now Claude can see every file
-   in it.
-4. **Open the same folder in a file browser** (Finder on Mac, Explorer on Windows) and click into the
-   `brain/` folder, so you can watch new pages appear as you work.
-5. **Confirm Claude can see the kit.** Paste this one line into Claude and wait for the answer:
+**The two layers (so you don't get lost):**
+- **This file is your operating script** — what to paste, what to look for, what you just learned.
+- **The brain's rule docs** (`CLAUDE.md`, `brain/RESOLVER.md`, `brain/SCHEMA.md`, the folder
+  `README.md`s, the `compile` skill) are there **so Claude behaves correctly.** You don't read them
+  cover to cover. In Step 1 you'll have Claude *explain* them, then you verify everything by looking at
+  files.
 
-   ```
-   Read README.md and tell me the name of this kit in one sentence.
-   ```
+**Every step looks the same:**
+> **What you're doing** · **Paste this** · **You should see** · **Check before moving on** · **If it
+> looks off** · **What you just learned**
 
-   ✅ If Claude answers with "GTM Tech Week London" (or similar), you're connected and ready. If it says
-   it can't find the file, the folder isn't open yet — redo step 3.
+**Ground rules:** never edit `data/` (it's the source of truth). The brain lives in `brain/`. Every fact
+on a page names its source.
 
-That's it. No terminal, no setup commands.
+### Setup (once)
+1. Open the Claude app, turn on **Claude Code**.
+2. Open this kit folder in it.
+3. Open the folder in a file browser too (Finder/Explorer), so you can watch `brain/` fill up.
+4. Confirm Claude can see the kit — paste: `Read README.md and tell me the name of this kit in one sentence.`
+   ✅ If it answers "GTM Tech Week London," you're ready.
 
-### The loop you'll repeat 8 times
-
+### The loop you're about to learn
 ```
-   1. PASTE a message          2. Claude builds        3. YOU look at the
-      (we give you the    ─▶      the files       ─▶      result and tick
-       exact words)               for you                 the checkbox
-```
-
-You never write a file yourself. You paste the message we give you, Claude does the work, and you check
-it looks right before moving on.
-
-### Three rules that never change
-
-1. **Don't touch the `data/` folder.** That's your source of truth (the CRM exports, the spreadsheet).
-   The brain reads from it; it never changes it.
-2. **Your brain lives in the `brain/` folder.** That's where the new pages appear.
-3. **No made-up facts.** Every page says where its information came from. If a call didn't say it, it
-   doesn't go on the page.
-
----
-
-## The journey (8 steps)
-
-```
-  PART 1 — the basics                      PART 2 — make it solid
-  ───────────────────                      ──────────────────────
-  ①  Teach it your first call              ④  Give every page one simple shape
-  ②  Ask it a question                     ⑤  Decide what to save vs look up
-  ③  Let it catch a mistake                ⑥  Add filing rules (no duplicates)
-                                           ⑦  Make working update the brain
-                                           ⑧  Know when you'd need more (and stop)
-
-  Progress:  ①──②──③──④──⑤──⑥──⑦──⑧
-```
-
-Each step takes 5–10 minutes. Do them in order. If anything looks off, every step has a
-**"If it looks off"** fix, and there's a known-good copy of every result in `facilitator/answer-key/`.
-
----
----
-
-# PART 1 — the basics
-
-## Step ① — Teach it your first call
-
-```
-[Step 1 of 8]  ◉───○───○───○───○───○───○───○
-```
-
-**What you'll do:** take a real sales call (the Clay sponsorship intro) and turn it into pages your brain
-can use. We start with Clay because it's your most important target, so its page becomes the centre of
-everything.
-
-**What "good" looks like:** five new pages appear, all linked together.
-
-**Paste this to Claude:**
-
-```
-Read the file brain/granola_clay-sponsor-intro-transcript.md. It's a recording of a real call — don't
-change it.
-
-Turn it into pages in my brain. Please do all of this:
-
-1. Make a meeting page at brain/meetings/2026-06-18-clay-sponsorship-intro.md. Write a few bullet points
-   in your own words: what happened, what we agreed, and the open question. Whenever you mention a person
-   or company, link to them like this: [[clay]] and [[bruno-estrella]].
-
-2. Make one page for each outside person or company in the call:
-   - brain/companies/clay.md
-   - brain/people/bruno-estrella.md
-   On each, write what we now know about them from the call. At the bottom add a "Sources" line that
-   links back to the meeting: [[2026-06-18-clay-sponsorship-intro]].
-   (Artur Wala and Krzysztof Pawlak are us, our own team — they don't get pages.)
-
-3. Make a contents page at brain/index.md that lists the new pages grouped under Companies, People, and
-   Meetings, each with a one-line summary.
-
-4. Make a diary file at brain/log.md with one line in it:
-   ## [2026-06-18] ingest | Clay sponsorship intro
-
-Don't change anything in the data/ folder or the original call file. When you're done, list what you made.
-```
-
-**You should see** five new files:
-
-```
-brain/
-├── meetings/2026-06-18-clay-sponsorship-intro.md
-├── companies/clay.md
-├── people/bruno-estrella.md
-├── index.md   ← your table of contents
-└── log.md     ← your diary
-```
-
-**Your brain now looks like this:**
-
-```
-              ┌──────────────────────┐
-              │  Clay intro meeting  │
-              │     2026-06-18       │
-              └─────────┬────────────┘
-                links to│and to
-            ┌───────────┴───────────┐
-        ┌───┴────┐              ┌────┴─────┐
-        │  Clay  │              │  Bruno   │
-        │company │              │ Estrella │
-        └────────┘              └──────────┘
-```
-
-**✅ Check before moving on:**
-- [ ] The five files exist, and the original call file is unchanged.
-- [ ] Open `brain/companies/clay.md` — it mentions wanting a **co-created track, not a booth**, and the
-      **London office**. (Both were in the call.)
-- [ ] There's **no** page for Artur or Krzysztof (they're us).
-
-**If it looks off:**
-- *It changed the call file* → paste: "Please put brain/granola_clay-sponsor-intro-transcript.md back the
-  way it was, and only create new files in brain/."
-- *It made a page for Artur or Krzysztof* → paste: "Please delete those two — they're our own team, not
-  outside contacts."
-
-> You just did the most important move there is: turning a messy call into clean, linked pages. The pros
-> call this **"ingesting"** a source. One call became five connected pages.
-
----
-
-## Step ② — Ask it a question
-
-```
-[Step 2 of 8]  ◉───◉───○───○───○───○───○───○
-```
-
-**What you'll do:** ask your brain a real question and get an answer that **shows its sources** — then
-save that answer so you never have to figure it out again.
-
-**Paste this to Claude:**
-
-```
-Using only my brain (start by reading brain/index.md, then follow the links), answer this:
-
-"Should we offer Clay a standard sponsorship package, and who should I contact first?"
-
-Rules:
-- Read brain/companies/clay.md and brain/people/bruno-estrella.md. You can also read the background file
-  they point to: brain/account-deep-dive_ANCHOR.md.
-- After every point you make, show where it came from, like [Source: 2026-06-18-clay-sponsorship-intro].
-  Don't say anything you can't back up.
-- Then save your answer as a page at brain/writing/clay-pitch-recommendation.md, add it to
-  brain/index.md under a new "Writing" heading, and add this line to brain/log.md:
-  ## [today's date] query | Clay pitch recommendation
-```
-
-**You should see** an answer that says, in short: **no standard package** — Clay runs its own events and
-wasn't keen on a generic booth. Pitch a **co-created track plus a Clay Club London** evening instead. And
-your first contact is **Bruno Estrella**. Every point has a source. A new page appears at
-`brain/writing/clay-pitch-recommendation.md`.
-
-**✅ Check before moving on:**
-- [ ] The answer says co-create (not a standard booth) and names Bruno Estrella.
-- [ ] Every point has a `[Source: ...]` next to it.
-- [ ] The answer was **saved as a page**, not just shown in chat.
-
-**If it looks off:**
-- *No sources shown* → paste: "Add a source after every point, and remove anything you can't source."
-- *It only answered in chat* → paste: "Now save that as brain/writing/clay-pitch-recommendation.md and
-  update index.md and log.md."
-
-> Notice what happened: you asked once, and the answer became a **permanent page**. Next time, the work is
-> already done. That's the difference between a brain and a search box.
-
----
-
-## Step ③ — Let it catch a mistake
-
-```
-[Step 3 of 8]  ◉───◉───◉───○───○───○───○───○
-```
-
-**What you'll do:** point your brain at your messy tracker spreadsheet and your CRM, and let it find
-where they disagree. This is the moment the brain saves you from a bad number in a meeting.
-
-**Paste this to Claude:**
-
-```
-Compare my hand-built tracker (data/sponsorship-tracker_WIP.xlsx) against the real CRM
-(data/attio_deals.csv). The tracker is my manual spreadsheet and I think it's gone stale.
-
-Find every place they disagree about a deal — its stage, its amount, or whether it's even there. For
-each one, tell me: the deal, what the tracker says, what the CRM says, and which one to trust (the CRM
-is the source of truth).
-
-Then write them into a new file brain/gaps.md, one line each under a "## Contradictions" heading, and
-add this to brain/log.md:
-## [today's date] lint | tracker vs CRM
-Don't change anything in data/.
-```
-
-**You should see** the brain catch (at least) these four problems:
-
-```
-  Deal           Your spreadsheet says   The CRM says        →  Trust
-  ──────────     ─────────────────────   ───────────────        ─────
-  ChurnZero      "Verbal yes 🤞"          Lost                   CRM
-  Cremarc        £25,000                 £16,000                CRM
-  Salesloft      listed twice (£45k x2)  one £45,000 deal       CRM
-  Transmission   (missing!)              £28,000, Won           CRM
-```
-
-A new file `brain/gaps.md` lists these. It's also fine — and correct — if Claude flags a few **extra**
-deals that are in the CRM but missing from your hand-built tracker (for example LocalGlobe, both Lost).
-Your tracker is an incomplete list, so finding more gaps than four means it's working, not that you did
-anything wrong.
-
-**✅ Check before moving on:**
-- [ ] It found at least the ChurnZero and Cremarc problems (the clearest two).
-- [ ] `brain/gaps.md` exists and points to both the tracker and the CRM.
-- [ ] It says to trust the **CRM**, not the spreadsheet.
-
-**If it looks off:**
-- *It says it can't open the spreadsheet* → paste: "It's a normal Excel file — please open it as a
-  spreadsheet and read the deal rows."
-- *It trusted the spreadsheet* → paste: "The CRM (attio_deals.csv) is the source of truth. Mark the
-  spreadsheet as stale where they disagree."
-
-> The pros call this a **"lint"** — a health check. A brain you only ever add to goes stale quietly.
-> This is what keeps it honest. **You've now done all three basics: teach it, ask it, check it.**
-
-```
-   ✓ PART 1 COMPLETE — you have a working brain.
-   Now let's make it solid enough to grow.
+   raw item  →  brain/inbox/  →  COMPILE  →  meetings / sources / companies / people
+                                              + index + log + gaps
+                                          →  ask it · check it · extend it
 ```
 
 ---
 ---
 
-# PART 2 — make it solid
+# Beat 1 — Meet the brain
 
-So far you have a brain that works. Part 2 adds the handful of habits that stop it from getting messy as
-it grows from 5 pages to 500. Same files, just tidier and smarter.
+## Step 1 — Meet the brain
 
-## Step ④ — Give every page one simple shape
+**What you're doing:** before adding anything, you'll ask Claude to explain the rulebook it's going to
+follow — so the "magic" is just rules.
 
+**Paste this:**
 ```
-[Step 4 of 8]  ◉───◉───◉───◉───○───○───○───○
-```
+Read CLAUDE.md, brain/RESOLVER.md, brain/SCHEMA.md, and the README files in brain/inbox/,
+brain/meetings/, brain/sources/, brain/companies/, brain/people/, and brain/agent/.
 
-**What you'll do:** put every page into the same two-part shape, so you always know where to look.
+Explain in plain English:
+1. What inbox/ is for.
+2. Where meeting transcripts go after compile.
+3. Where non-meeting raw files go.
+4. Where company and person knowledge goes.
+5. Where your own analysis/report goes.
+6. What order you must read the rules before writing files.
 
-```
-   ┌─ Clay ─────────────────────────────────┐
-   │  TOP = what's true right now            │ ← you rewrite this as things change
-   │   • opened a London office              │
-   │   • wants a co-created track, not booth │
-   │ ────────────────────────────────────    │ ← the dividing line
-   │  BOTTOM = what happened, with dates     │ ← you only ever ADD lines here
-   │   • 2026-06-18  intro call              │
-   └─────────────────────────────────────────┘
-```
-
-The top is "the situation now." The bottom is "the history." They never contradict each other because
-you change the top but only add to the bottom.
-
-**Paste this to Claude:**
-
-```
-Reshape brain/companies/clay.md and brain/people/bruno-estrella.md into this layout. The page will have
-a frontmatter block at the very top, then the "now" section, then ONE divider line, then the timeline.
-
-1. Frontmatter at the very top: a line of ---, then title, type (company or person), created date,
-   updated date, sources, status: active, then another line of ---. (For the person page also include
-   company: [[clay]] and their role inside this block.) This is the standard frontmatter that markdown
-   files start with — two --- lines wrapping a few labelled fields.
-2. Then one short paragraph saying where things stand right now.
-3. Then "## State": the current facts, each with its [Source: ...].
-4. Then "## Open Threads": things still up in the air (dates, the new EMEA marketer starting in July).
-5. Then "## Sources" and "## Related" (links).
-6. Then ONE more line of just --- on its own. This single line is the divider between "now" (above) and
-   "history" (below).
-7. Below that divider, "## Timeline": newest first, one dated line per event, e.g.
-   2026-06-18 — Clay intro call; wants co-create not booth [Source: [[2026-06-18-clay-sponsorship-intro]]]
-
-The rule: the "now" part gets rewritten as things change; the Timeline only ever gets new lines added.
-Also update brain/meetings/2026-06-18-clay-sponsorship-intro.md so the full call text sits at the bottom
-under a --- divider, with your bullet summary on top.
+Keep it under 12 bullets.
 ```
 
-**You should see** both pages reshaped: a frontmatter block at the top, a "## State" section where every
-line cites a source, and a "## Timeline" at the bottom after a single divider line. (A finished page has
-the two frontmatter `---` lines at the very top, plus one more `---` divider lower down before Timeline.)
+**You should see:** Claude explain the chain — `CLAUDE.md → RESOLVER.md → folder README → SCHEMA.md →
+compile skill` — and the loop in plain words.
 
-**✅ Check before moving on:**
-- [ ] Each page has a frontmatter block at the top **and** one divider line lower down, with "now" above
-      it and a dated "## Timeline" below it.
-- [ ] Every line in the "## State" section has a `[Source: ...]`.
-- [ ] Bruno's frontmatter shows `company: [[clay]]`.
+**Check before moving on:**
+- [ ] It says `inbox/` is **temporary**.
+- [ ] It says meeting transcripts are **preserved inline** in `meetings/`.
+- [ ] It says non-meeting raw files are preserved in `sources/`.
+- [ ] It says claims need **sources**.
 
-**If it looks off:**
-- *It added new facts to the top instead of the timeline* → paste: "New events go as dated lines in the
-  Timeline at the bottom. The top is only for the current situation."
+**If it looks off:** paste `Re-read brain/RESOLVER.md and the folder READMEs and correct anything you got
+wrong, especially where each kind of item is filed.`
 
-> One shape for every page means anyone (including you in six months) knows exactly where to look.
+**What you just learned:** The brain isn't magic — it's a folder system plus rules Claude follows.
 
 ---
-
-## Step ⑤ — Decide what to save vs what to look up
-
-```
-[Step 5 of 8]  ◉───◉───◉───◉───◉───○───○───○
-```
-
-**What you'll do:** stop your brain from copying things that live in the CRM — because copies go stale.
-
-Simple rule:
-
-```
-   Things that CHANGE often          Things that happened ONCE
-   (deal stage, deal amount)         (a call, an email)
-   ───────────────────────           ─────────────────────
-   → DON'T copy them in.             → DO save them in the brain.
-     Look them up in the CRM            They never change, and your
-     when you need them.                pages point to them as proof.
-```
-
-**Paste this to Claude:**
-
-```
-Update brain/companies/clay.md so it doesn't copy Clay's live CRM details (its deal stage, deal amount,
-owner) — those change, and a copy would go stale. Instead:
-
-- In the info block at the top, add a line linking to the live record:
-  attio_company_id: 208c93a7-381b-4965-ac04-2ea3584bff04
-  (that's Clay's ID — you can confirm it in data/attio_companies.csv, the clay.com row.)
-- Remove any hard-coded deal stage or amount from the page body. Where the page needs current deal
-  status, just say to look it up in the CRM by that ID.
-
-Leave the call transcript where it is (that's a one-time event, we keep it). Add to brain/log.md:
-## [today's date] refactor | connector posture applied to clay
-```
-
-**You should see** Clay's frontmatter gain an `attio_company_id:` line, the deal stage/amount disappear
-from the page body (replaced by "look it up in the CRM"), and the call transcript still sitting on the
-meeting page untouched.
-
-**✅ Check before moving on:**
-- [ ] `clay.md`'s frontmatter has the `attio_company_id` line.
-- [ ] No hard-coded deal stage or amount is left on the page.
-- [ ] The call transcript is still there.
-
-**If it looks off:**
-- *It deleted the transcript* → paste: "Put the transcript back — we always keep call records. Only the
-  changing CRM details should be looked up instead of copied."
-
-> Save what happened. Look up what changes. That one habit is why your brain won't drift out of date.
-
 ---
 
-## Step ⑥ — Add filing rules (so nothing gets duplicated)
+# Beat 2 — Run compile
 
+## Step 2 — Compile your first inbox item
+
+**What you're doing:** turning one raw call transcript into a connected set of brain pages.
+
+**Paste this:**
 ```
-[Step 6 of 8]  ◉───◉───◉───◉───◉───◉───○───○
-```
-
-**What you'll do:** write down two short rules so every new note has one obvious home — and so you never
-end up with the **same company on two different pages**. (Your CRM has a few sneaky duplicates; you'll
-catch them.)
-
-**Paste this first message:**
-
-```
-Create two short rule files for my brain:
-
-1. brain/RESOLVER.md — a simple "where does this go?" list. Top to bottom, first match wins, one home
-   per note:
-   - a person → brain/people/<first-last>.md
-   - a company → brain/companies/<name>.md
-   - a meeting → brain/meetings/<date>-<name>.md (call text at the bottom)
-   - a deal → brain/deals/<name>.md
-   - a saved answer or a draft → brain/writing/<name>.md
-   - a contradiction or open question → add a line to brain/gaps.md
-   - not sure yet → brain/inbox/
-   Include the "check before you create" rule and the "links use just the filename" rule.
-
-2. brain/SCHEMA.md — a one-page description of the page layout from the last few steps (the info block,
-   the "now on top / dated history on bottom" shape, sources after every fact, and the idea that the
-   filename is the company's ID with other spellings listed as aliases).
-```
-
-**Then paste this second message** (the duplicate-catcher):
-
-```
-Before making any new company page, check data/attio_companies.csv for the same company under a
-different name or web address. If it already has a page, update that page and list the other name in an
-"aliases" line — don't make a second page.
-
-Do this for:
-- "Clay" (clay.com) and "Clay Labs" (clay.run) — the SAME company. We already have brain/companies/clay.md,
-  so don't make clay-labs.md. Just add aliases: ["Clay Labs", "clay.run"] to the Clay page.
-- "Cognism" (cognism.com) and "Cognism Ltd" (www.cognism.com) — also the SAME company. Make ONE page
-  brain/companies/cognism.md with aliases: ["Cognism Ltd", "www.cognism.com"].
-
-Add to brain/log.md:
-## [today's date] lint | removed duplicate companies (Clay/Clay Labs, Cognism/Cognism Ltd)
+Use the compile skill (skills/compile/SKILL.md) to compile just the Clay sponsorship call:
+brain/inbox/clay-sponsorship-intro.md. Follow the skill's read-order. Don't compile the other inbox
+items yet.
 ```
 
 **You should see:**
+- `brain/inbox/` no longer contains the Clay **transcript** (the email + deal note are still there).
+- `brain/meetings/2026-06-18-clay-sponsorship-intro.md` exists.
+- `brain/companies/clay.md` exists.
+- `brain/people/bruno-estrella.md` exists.
+- `brain/index.md` and `brain/log.md` changed.
 
+**Check before moving on:**
+- [ ] The meeting page has the **full transcript below a `---`** line.
+- [ ] `clay.md` **cites the meeting** (`[Source: [[2026-06-18-clay-sponsorship-intro]]]`).
+- [ ] No page was made for our own team (Artur Wala, Krzysztof Pawlak).
+
+**If it looks off:** paste `The transcript must be preserved inline below a --- fold on the meeting page,
+and Clay/Bruno must each have a page that cites the meeting. Fix anything missing. Don't make pages for
+gtm-week.com people.`
+
+**What you just learned:** Inbox is temporary. Compile preserves the raw material in the right permanent
+home and updates the connected pages.
+
+---
+
+## Step 2b — Confirm nothing was lost
+
+**What you're doing:** proving "the inbox emptied" means *filed*, not *deleted*.
+
+**Paste this:**
 ```
-   BEFORE (in the CRM)              AFTER (in your brain)
-   ──────────────────              ─────────────────────
-   Clay        (clay.com)    ─┐
-   Clay Labs   (clay.run)    ─┴──▶  one page: clay.md
-                                    aliases: Clay Labs, clay.run
-
-   Cognism     (cognism.com) ─┐
-   Cognism Ltd (www.cognism…)─┴──▶  one page: cognism.md
-                                    aliases: Cognism Ltd, www.cognism.com
+Show me where the Clay call transcript is now, and confirm the original wording is preserved word for
+word on the meeting page.
 ```
 
-**✅ Check before moving on:**
-- [ ] `brain/RESOLVER.md` and `brain/SCHEMA.md` exist.
-- [ ] There's **one** Clay page and **one** Cognism page — no `clay-labs.md`, no second Cognism file.
-- [ ] Each one lists the other name under `aliases`.
+**You should see:** Claude point to `brain/meetings/2026-06-18-clay-sponsorship-intro.md` and confirm the
+verbatim transcript sits below the fold.
+
+**Check before moving on:**
+- [ ] The transcript text is intact on the meeting page.
+
+**What you just learned:** Compile *moves* raw material into its permanent home — it never deletes it
+into nothing.
+
+---
+---
+
+# Beat 3 — Ask · check · compound
+
+## Step 3 — Ask a sourced question, and keep the answer
+
+**What you're doing:** asking your brain a real question, getting a cited answer, and saving it so you
+never redo the work.
+
+**Paste this:**
+```
+Using only my brain (read brain/index.md first, then follow the links), answer:
+"Should we offer Clay a standard sponsorship package, and who should I contact first?"
+Put a [Source: ...] after every point; don't say anything you can't back up. Then save your answer to
+brain/agent/clay-pitch-recommendation.md, add it to brain/index.md, and add a line to brain/log.md.
+```
+
+**You should see:** a short answer — **no standard booth; co-create a GTM-engineering track + Clay Club
+London; first contact Bruno Estrella** — every point cited, saved to `brain/agent/`.
+
+**Check before moving on:**
+- [ ] The answer says co-create (not a standard package) and names Bruno.
+- [ ] Every point has a `[Source: ...]`.
+- [ ] It was saved to `brain/agent/clay-pitch-recommendation.md` (not `sources/` — that's for raw; this
+      is Claude's own analysis).
+
+**If it looks off:** paste `Answer only from the brain pages and what they cite. Add a source to every
+point, then save it to brain/agent/clay-pitch-recommendation.md.`
+
+**What you just learned:** A good answer becomes a page. Your thinking compounds, just like ingested
+sources.
+
+---
+
+## Step 4 — Run a check (catch stale data)
+
+**What you're doing:** letting the brain catch a mistake a human would miss — your tracker spreadsheet
+disagrees with the CRM.
+
+**Paste this:**
+```
+Compare my hand-built tracker (data/sponsorship-tracker_WIP.xlsx) with the real CRM
+(data/attio_deals.csv). Find every deal they disagree on — stage, amount, or whether it exists. Trust
+the CRM. Write each disagreement to brain/gaps.md and add a line to brain/log.md.
+```
+
+**You should see:** the brain flag (at least) ChurnZero (Lost vs "verbal yes"), Cremarc (£16k vs £25k),
+Salesloft (double-counted), Transmission (missing, Won) — written to `brain/gaps.md`.
+
+**Check before moving on:**
+- [ ] It found at least ChurnZero and Cremarc.
+- [ ] `brain/gaps.md` lists them and says trust the **CRM**.
+
+**If it looks off:** paste `The tracker is an .xlsx (a zipped spreadsheet). If your read came back with
+blank text columns, the labels are stored as inline-string cells — unzip the file and read
+xl/worksheets/sheet1.xml directly to get the sponsor names and statuses. Then report only disagreements
+you can show with both values side by side, and trust the CRM.`
+
+**What you just learned:** A brain you only ever add to goes stale quietly. Checking it is what keeps it
+honest.
+
+---
+
+## Step 5 — Compile a second item (watch it compound)
+
+**What you're doing:** feeding in the follow-up email and watching the brain **update** Clay instead of
+making a second Clay page.
+
+**Paste this:**
+```
+Now compile the Clay follow-up email: brain/inbox/clay-followup-email.md.
+```
+
+**You should see:**
+- the email moved to `brain/sources/2026-06-20-clay-followup-email.md` (not `meetings/` — it's not a
+  call),
+- a **new dated line on the existing `clay.md` Timeline** (no second Clay page),
+- `clay.md`'s `sources:` now lists **two** items.
+
+**Check before moving on:**
+- [ ] There is still **one** `clay.md` (the email updated it; it did not create `clay-labs.md` or a
+      duplicate).
+- [ ] The email is in `sources/`, kept as-is.
+
+**If it looks off:** paste `That email is about Clay, which already has a page. Update the existing
+clay.md (new timeline line + add the source) instead of creating a second Clay page. The email belongs
+in sources/.`
+
+**What you just learned:** New information about something you already track **updates** its page. One
+real-world thing = one page.
+
+---
+---
+
+# Beat 4 — Extend (change a rule, watch the brain obey)
+
+## Step 6 — Add a routing rule
+
+**What you're doing:** the payoff. You'll add one rule to the filing system and watch the brain route a
+new item by the rule **you** wrote. Your inbox still has a deal note that has no clean home yet.
+
+**One thing that matters:** the rulebook is read **top to bottom, first match wins.** A deal is *also*
+about a company — so if you put the deals rule below the company rule, the deal would get filed as a
+company instead. The rule has to go **above** the company rule. The prompt below says exactly that.
+
+**Paste this:**
+```
+I want deals to have their own home. In brain/RESOLVER.md, add a new rule to the decision tree:
+"a financial deal with terms and a decision → brain/deals/<slug>.md". Put it ABOVE the company rule,
+because the tree is first-match-wins and a deal is also about a company. Also create a short
+brain/deals/README.md saying what belongs there. Then compile brain/inbox/salesloft-deal-note.md and
+file it using the new rule.
+```
+
+**You should see:**
+- `brain/RESOLVER.md` now has a `deals/` rule **above** the company rule, and `brain/deals/README.md`
+  exists,
+- `brain/deals/salesloft.md` appears — a deal page that **routed there because of the rule you added,
+  placed where you put it**,
+- the £45k Headline terms and Aaron Lindqvist captured on it.
+
+**Check before moving on:**
+- [ ] `brain/deals/salesloft.md` exists (in `deals/`, **not** `companies/`), with the £45k Headline terms.
+- [ ] The deal note left the inbox.
 
 **If it looks off:**
-- *It made clay-labs.md anyway* → paste: "Merge clay-labs.md into clay.md (add 'Clay Labs' and 'clay.run'
-  to the aliases), then delete clay-labs.md. One company, one page."
+- *It landed in `companies/` instead* → paste `The deals rule must sit ABOVE the company rule in
+  RESOLVER.md (first match wins). Move it up, then re-compile the deal note so it lands in brain/deals/.`
 
-> Two half-pages for one company is how a brain quietly turns to mush. The "check before you create"
-> habit is the cheap insurance against it.
+**What you just learned:** You control the rules — and **order matters.** The brain reads top to bottom,
+so where you put a rule changes what it does. Change one, and the brain obeys it.
 
----
-
-## Step ⑦ — Make working update the brain (the write-back habit)
-
-```
-[Step 7 of 8]  ◉───◉───◉───◉───◉───◉───◉───○
-```
-
-**What you'll do:** run a ready-made helper to prep for your calls, then add the habit that matters most
-— **every time you do work, the brain gets updated too.** You'll do it by hand once so you can see it;
-then we'll point out how to make it stick.
-
-A helper like this is called a **skill** — a saved set of instructions in the `skills/` folder that
-Claude runs when you ask.
-
-**Paste this first message (do the work):**
-
-```
-Use the instructions in skills/call-prep/SKILL.md to prep me for my upcoming outside calls — the ones
-in brain/calendar_next-24h.ics — using that calendar and the CRM. Save the briefs to
-work/call-prep_next-24h.md.
-```
-
-**Then paste this second message (make it update the brain):**
-
-```
-That prep was about Clay and Bruno Estrella, but it only saved to the work/ folder. From now on, whenever
-we do work that turns up something about a person or company, also add a dated line to their brain page's
-Timeline.
-
-So add a line to the bottom of brain/companies/clay.md and brain/people/bruno-estrella.md noting that we
-prepped for the call and the co-creation proposal is still owed, with [Source: work/call-prep_next-24h.md].
-Then add to brain/log.md:
-## [today's date] enrich | call-prep updated Clay and Bruno Estrella
-```
-
-**You should see** a call-prep brief in `work/`, AND a new dated line on Clay's and Bruno's pages. The
-brain is richer than it was five minutes ago — just from doing normal work.
-
-**✅ Check before moving on:**
-- [ ] The brief exists in `work/call-prep_next-24h.md`.
-- [ ] Clay's page (and Bruno's) has a **new Timeline line** pointing to that brief.
-
-**If it looks off:**
-- *Nothing changed in the brain* → paste: "Now add a dated Timeline line to each person/company the prep
-  covered, pointing to the brief. The brain should update whenever we do work."
-
-> This is the whole point in one habit: **work, then write it back.** You did the write-back by hand here
-> so you could see it. To make it permanent, you'd add that same "write it back" instruction to the end
-> of the skill file (`skills/call-prep/SKILL.md`) — then every future run updates the brain on its own,
-> and you never have to remember. That's the rule the pros bake into every skill.
-
----
-
-## Step ⑧ — Know when you'd need more (and stop here)
-
-```
-[Step 8 of 8]  ◉───◉───◉───◉───◉───◉───◉───◉
-```
-
-**What you'll do:** write one short page that says what you built, what the "heavy machinery" version
-would add, and why you don't need it yet. Then you're done.
-
-There's a powered-up version of all this (a real database, automatic overnight clean-ups, robots that
-read your email and update the brain while you sleep). It's real, and you can switch to it later **without
-losing anything**. But you only need it once your brain gets big — roughly a few hundred pages, **or when
-you hit a specific thing plain files can't do** (search gets slow, links get hard to keep straight).
-You're nowhere near that, so you stop here, on purpose.
-
-**Paste this to Claude:**
-
-```
-Write a short one-page file at brain/agent/[today's date]-gbrain-readiness.md that says, in plain English:
-1. What we built: a brain made of simple linked files — we can teach it, ask it, and check it; every
-   page has the same shape; it knows what to save vs look up; it has filing rules; and it updates itself
-   when we work.
-2. What the powered-up "engine" version would add that files can't: fast search when there are tons of
-   pages, automatic overnight clean-up, and robots that update the brain on their own (from email, on a
-   schedule).
-3. When to switch to it: when there are too many pages or it starts feeling slow (roughly 200–300 pages),
-   OR when you hit a specific thing plain files can't solve.
-4. Why we're not switching yet — and that switching later loses nothing, because the files stay the
-   real source.
-Keep it to one page.
-```
-
-**You should see** a new one-page file at `brain/agent/[today's date]-gbrain-readiness.md` covering those
-four points.
-
-**✅ Check — and you're finished:**
-- [ ] The page names roughly when you'd upgrade (a few hundred pages, feels slow, or a specific thing
-      plain files can't solve).
-- [ ] It says upgrading later loses nothing.
-
-**If it looks off:**
-- *It wrote a long essay* → paste: "Trim it to one page, four short points."
-- *It skipped when-to-upgrade* → paste: "Add the trigger: a few hundred pages, or when plain files can't
-  do something you need."
-
-```
-   🏁 DONE.
-   ◉───◉───◉───◉───◉───◉───◉───◉   8 of 8
-```
+> **Going further (optional):** ask Claude to add a "Risks" line to the company page shape in
+> `brain/SCHEMA.md`, then re-touch `clay.md` — and watch the new shape take hold while the timeline and
+> sources stay intact.
 
 ---
 ---
 
-## What you just built
+## What you built — and can now do
 
-```
-   STARTED WITH                          ENDED WITH
-   ────────────                          ──────────
-   a folder of scattered files     ─▶    a brain that:
-   you had to dig through                • answers in plain English, with sources
-                                         • caught the mistakes in your spreadsheet
-                                         • won't duplicate or go stale
-                                         • gets smarter every time you use it
-```
+You started with an empty brain and a box of raw notes. Now you can:
+1. **Explain the loop** — inbox → compile → meetings/sources/companies/people → index/log/gaps.
+2. **Run compile** and see pages created.
+3. **Prove** raw material was preserved, not deleted.
+4. **Ask a sourced question** and keep the answer.
+5. **Check** the brain against stale data.
+6. **Change a rule** and watch the brain obey.
 
-From here, the brain powers your real work — ranking sponsors, recruiting speakers, picking the date —
-except now **every job you do leaves it a little smarter.** That's the whole point. A drawer holds what
-you put in it. A brain compounds.
+Point at any of these and you'll find the rule behind it: **`RESOLVER.md`** (where things go), a folder
+**`README.md`** (local rule), **`SCHEMA.md`** (page shape), the **`compile` skill** (how the loop runs),
+and the **one rule you changed**.
+
+### Where the engine would take over (and why you stop here)
+This brain is plain markdown files. The powered-up version (a database, overnight clean-ups, robots that
+ingest your email on a schedule) only earns its keep once you're past a few hundred pages or hit
+something files can't do. You're nowhere near that — and switching later loses nothing, because the
+files stay the source of truth. So you stop here, with a brain you understand and can extend.
 
 ---
-
-### Stuck on any step?
-
-There's a finished, correct copy of every step's result in **`facilitator/answer-key/`**. Compare yours
-to it, or just re-paste the step's message. You can always catch up; you can't get permanently stuck.
-
-### For the curious (the real names)
-
-You used a pattern called the **LLM wiki** (Andrej Karpathy) and its fuller form **gbrain** (Garry Tan).
-The three basics in Part 1 are called *ingest, query, lint*. The Part 2 habits are the *page shape
-(compiled-truth + timeline)*, the *connector posture*, the *filing resolver*, and the *enrichment wiring
-rule*. You don't need the words. You've already done the things.
+*Facilitators: the goal + acceptance checks are in `facilitator/workshop-goal.md`; known-good output is
+in `facilitator/answer-key/`.*

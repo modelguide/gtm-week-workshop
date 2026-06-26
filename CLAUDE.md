@@ -45,17 +45,50 @@ results persist, so a data viewer can **reload** `data/` + `work/` and show the 
 - `data/` — the connector files (CRM spine, Clay/Apollo prospects, lookalike scores, signals
   feed, competitor events, do-not-approach, Luma tickets, ad spend, the stale Excel tracker).
   `data/SCHEMA-SOURCES.md` documents every column's provenance.
-- `brain/` — context the GTM lead already has: the two ICPs (`icp_sponsor.md`,
-  `icp_speaker.md`), the anchor deep-dive (`account-deep-dive_ANCHOR.md` = Clay, fully real),
-  three Granola transcripts (one is intentionally partial — handle gracefully), two email
-  threads, and `calendar_next-24h.ics` (two external calls: a sponsor + a tier-1 speaker).
+- `brain/` — the wiki the LLM owns, plus context the GTM lead already has. The wiki is governed by
+  `brain/RESOLVER.md` (filing) + `brain/SCHEMA.md` (page shape) + each `brain/<folder>/README.md`
+  (local rules), and built by the `compile` skill. Folders: `inbox/` (drop zone), `meetings/`,
+  `sources/`, `companies/`, `people/`, `agent/`, plus `index.md`/`log.md`/`gaps.md`. Also present as
+  starting context: the two ICPs, the anchor deep-dive (`account-deep-dive_ANCHOR.md` = Clay), Granola
+  transcripts, email threads, `calendar_next-24h.ics`. The workshop (`WORKSHOP.md`) builds the wiki.
 - `content-library/` — offers and content in the house voice: two past posts, the sponsorship
   prospectus, the speaker-invite email, the ticket-launch block, plus `brand/voice.md` and
   `brand/kit.md` (palette: off-white `#fefaef`, black, acid-green `#b8ff03`, magenta `#fc3dd5`).
 - `skills/` — reusable workflows (see below).
 
+## The brain (the wiki layer)
+
+> **Workshop TL;DR:** The brain is a set of linked markdown pages the LLM keeps current. Raw stuff lands
+> in `brain/inbox/`; you run **compile**; it sorts each item into a permanent home and updates the pages
+> it touches. "Inbox emptied" means **preserved in its home, never deleted.**
+
+**Substrate.** `raw source → brain/inbox/ → compile → organized pages (meetings/sources/companies/people)
+→ query/lint compound it.` This is the gbrain / Karpathy LLM-wiki pattern, lean version. `WORKSHOP.md`
+walks a participant through building it.
+
+**Chain of authority** (when in doubt): root `CLAUDE.md` → `brain/RESOLVER.md` (where things go) →
+`brain/<folder>/README.md` (local rules) → `brain/SCHEMA.md` (page shape) → the `compile` skill
+(`skills/compile/SKILL.md`). If two disagree, this file wins.
+
+**The compile read-order** (before writing anything): read root `CLAUDE.md` → `RESOLVER.md` → `index.md`
+→ pick the destination folder → that folder's `README.md` → `SCHEMA.md` → only then create/update pages.
+The folder READMEs are operating rules, not documentation.
+
+**Brain hard rules.**
+- **Never invent claims.** If a source doesn't say it, don't write it; speculation goes in `gaps.md`.
+- **Inbox emptied = preserved.** Compile *moves* each item to its permanent home (a transcript stays
+  inline in `meetings/`; a non-meeting raw goes to `sources/`). It is filed, not lost.
+- **Sources are immutable** — never edit a transcript below a meeting's fold or a file in `sources/`.
+- **Dedup before create** for people/companies — one real-world entity = one page; variants go in
+  `aliases:`.
+- **Wikilinks are basename-only** (`[[clay]]`).
+- **Don't change the schema files or add new top-level `brain/` folders** except in the workshop's
+  Extend exercise.
+
 ## Skills
-Two reference skills ship in `skills/`:
+Reference skills ship in `skills/`:
+- **`skills/compile/SKILL.md`** — the **ingest** engine: turns `brain/inbox/` items into filed, linked
+  brain pages following the read-order above. The heart of the workshop.
 - **`skills/call-prep/SKILL.md`** — one-page brief per external call in the next 24h. The
   "install one" example for Part III.
 - **`skills/sponsor-outreach/SKILL.md`** — drafts a tailored sponsorship prospectus and a

@@ -1,43 +1,52 @@
 # Facilitator answer-key
 
-Known-good output for every step of `WORKSHOP.md`. Use it two ways:
-- **Unblock a stuck participant** — show them the target file, or have them reset to the checkpoint and
-  re-run the step's prompt.
-- **Grade a finished brain** — diff the participant's `brain/` against these.
+Known-good output for the workshop, captured from a **real compile run** (not hand-written), so it
+matches exactly what the `compile` skill produces. Use it to unblock a stuck participant or to grade a
+finished brain.
 
-These files are **reference copies**. They are NOT shipped in `brain/` — the kit ships Phase-0 (empty
-wiki) so participants build it themselves. Paths below mirror where the file should land in `brain/`.
+These are **reference copies** — they are NOT shipped in the live `brain/` (which starts empty in the
+entity folders so participants build it themselves). Paths mirror where each file lands in `brain/`.
 
-## Checkpoint states (what `brain/` should contain after each step)
+## `after-compile/` — the gold state after Beats 2–3
 
-| After step | New in `brain/` | The teaching beat |
-|---|---|---|
-| 1 Ingest | `meetings/2026-06-18-clay-sponsorship-intro.md`, `companies/clay.md`, `people/bruno-estrella.md`, `index.md`, `log.md` | one source → five linked pages |
-| 2 Query | `writing/clay-pitch-recommendation.md` (+ index/log) | answer = a page, every claim cited; **co-create, not a booth; Bruno first** |
-| 3 Lint | `gaps.md` (+ log) | the tracker is stale: **ChurnZero, Cremarc, Salesloft, Transmission** |
-| 4 Page shape | `clay.md` + `bruno-estrella.md` reshaped to fold; transcript inline on meeting page | compiled-truth above, timeline below |
-| 5 Connector posture | `clay.md` gains `attio_company_id`, drops mirrored CRM state | mirror nothing live; preserve cited events |
-| 6 Routers + dedup | `RESOLVER.md`, `SCHEMA.md`, `cognism.md`; `clay.md` aliases | **one Clay page, one Cognism page** (no `clay-labs.md`) |
-| 7 Skill write-back | `work/call-prep_next-24h.md` + new Timeline lines on touched pages | every run writes the brain back |
-| 8 Engine line | `agent/<date>-gbrain-readiness.md` | names the adoption trigger; stops before Postgres |
+After the participant compiles the two Clay inbox items (the call transcript + the follow-up email), the
+brain should match `after-compile/brain/`:
 
-## Folder map
-```
-step-1-ingest/        the five Karpathy-light pages (the "before" shape)
-step-2-query/         the filed-back recommendation
-step-3-lint/          gaps.md with the four contradictions (+ emergent extras)
-step-4-pageshape/     clay.md + bruno-estrella.md + meeting page in the gbrain fold
-step-5-connector/     the clay.md frontmatter delta (note)
-step-6-routers/       RESOLVER.md, SCHEMA.md, the mature clay.md (ids+aliases), cognism.md
-step-7-skill/         work/call-prep_next-24h.md sample + the write-back note
-step-8-engine/        gbrain-readiness.md
-```
+| File | What to check |
+|---|---|
+| `meetings/2026-06-18-clay-sponsorship-intro.md` | analysis above `---`, **full transcript inline below** |
+| `sources/2026-06-20-clay-followup-email.md` | the email, moved here, `type: source`, immutable |
+| `companies/clay.md` | compiled-truth + timeline; **two** timeline lines (06-18 + 06-20), every claim cited; **one** Clay page (the email updated it, didn't duplicate) |
+| `people/bruno-estrella.md` | `company: [[clay]]`, cited, timeline |
+| `index.md` / `log.md` / `gaps.md` | Clay/Bruno/meeting/source rows; one ingest log entry; Lucia Romano held as a gap (not a page) |
 
-## Two facts every contradiction/dedup check hinges on (verified against the data)
-- **Step 3 (tracker vs CRM, `data/sponsorship-tracker_WIP.xlsx` vs `data/attio_deals.csv`):**
-  ChurnZero = "Verbal yes 🤞" in tracker but **Lost** in CRM · Cremarc = **£25,000** tracker vs
-  **£16,000** CRM · **SalesLoft** entered twice (casing variant) double-counting one £45,000 deal ·
-  **Transmission** (£28,000, Won) is in the CRM but missing from the tracker. Trust the CRM.
-- **Step 6 (dedup, `data/attio_companies.csv`):** `Clay`/clay.com = `Clay Labs`/clay.run (Clay's Record
-  ID `208c93a7-381b-4965-ac04-2ea3584bff04`) · `Cognism`/cognism.com = `Cognism Ltd`/www.cognism.com.
-  One page each; the variant goes in `aliases:`.
+**Key teaching checks:**
+- The transcript is **preserved inline** in `meetings/`, not deleted — "inbox emptied" = filed.
+- **No page for Artur Wala or Krzysztof Pawlak** (our own team).
+- **No page for Lucia Romano** — she's named once and not yet engaged, so she's an Open Thread + a
+  `gaps.md` line (notability tie-breaker in `people/README.md`).
+- The follow-up email **updated the existing Clay page** — one Clay page, two sources.
+
+## Beat 3 — Ask / Check
+
+- **Ask (→ `agent/`):** the saved recommendation lands in `brain/agent/clay-pitch-recommendation.md`
+  (this brain has no `writing/`; a recommendation is an `agent/` deliverable). It should say **co-create,
+  not a standard booth**, name **Bruno**, and cite every claim.
+- **Check (lint):** comparing `data/sponsorship-tracker_WIP.xlsx` to `data/attio_deals.csv` surfaces the
+  stale-tracker contradictions (ChurnZero Lost vs "verbal yes", Cremarc £16k vs £25k, Salesloft
+  double-count, Transmission missing). They land in `gaps.md`. Trust the CRM.
+
+## Beat 4 — Extend
+
+After the participant adds a `deals/` rule to `RESOLVER.md` **above the company rule** (first-match-wins —
+a deal is also about a company) and compiles `inbox/salesloft-deal-note.md`:
+- a **`brain/deals/salesloft.md`** page appears in **`deals/`, not `companies/`** (the placement is the
+  teaching point),
+- it carries the £45k Headline terms and holds Aaron Lindqvist as a contact/thread (no premature person
+  page),
+- the brain obeyed a rule the participant wrote, *where they wrote it*. That's the learning-outcome
+  climax — and the lesson is **order matters**.
+
+> **Grading note:** if the deal page lands in `companies/salesloft.md`, the participant put the rule
+> below the company rule. A page still appeared, so it can *look* right — check the folder. The fix is
+> to move the deals rule above the company rule and re-compile.
